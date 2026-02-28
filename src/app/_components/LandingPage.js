@@ -7,7 +7,7 @@ export default function LandingPage({ content }) {
         <p className="text-sm text-neutral-600">{content.siteName}</p>
       </header>
 
-      <main className="mx-auto max-w-5xl px-6 py-10 space-y-8 sm:space-y-10">
+      <main className="mx-auto max-w-5xl px-6 py-10 space-y-10 sm:space-y-12">
         <section
           aria-labelledby="hero-title"
           className="-mx-6 border-y border-neutral-200 bg-[radial-gradient(circle_at_top,_rgba(244,244,245,0.7),_rgba(255,255,255,1)_55%)] px-6 py-12 sm:mx-0 sm:rounded-2xl sm:border sm:px-10 sm:py-14"
@@ -29,7 +29,7 @@ export default function LandingPage({ content }) {
                   atención directa y sin intermediarios para el Mundial 2026.
                 </p>
                 <p className="max-w-2xl text-base leading-7 text-neutral-700">
-                  Diseñado para viajeros que buscan comodidad, privacidad y
+                  Pensado para viajeros que buscan comodidad, privacidad y
                   traslados eficientes durante el torneo.
                 </p>
                 <details className="group max-w-2xl">
@@ -80,6 +80,9 @@ export default function LandingPage({ content }) {
               <p className="text-sm text-neutral-500">
                 Respuesta rápida por WhatsApp · Fechas limitadas
               </p>
+              <p className="text-sm text-neutral-500">
+                No solicitamos pagos sin antes compartir información completa
+              </p>
             </div>
 
             <div className="order-4 lg:col-span-7 lg:order-4">
@@ -113,7 +116,7 @@ export default function LandingPage({ content }) {
         >
           <h2
             id="summary-title"
-            className="text-2xl font-semibold text-neutral-900"
+            className="text-2xl font-semibold text-neutral-900 sm:text-3xl"
           >
             Resumen del departamento
           </h2>
@@ -154,22 +157,22 @@ export default function LandingPage({ content }) {
               <div className="space-y-2">
                 <h2
                   id="stadium-location-title"
-                  className="text-2xl font-semibold text-neutral-900"
+                  className="text-2xl font-semibold text-neutral-900 sm:text-3xl"
                 >
                   Ubicación estratégica en Chapalita · Conectividad clave para el
                   Mundial 2026
                 </h2>
                 <p className="text-sm text-neutral-600">
                   Zona tranquila, bien conectada y con acceso eficiente a estadio,
-                  Expo y zonas de afición.
+                  Expo y zonas clave de la ciudad.
                 </p>
               </div>
-              <p className="text-base leading-7 text-neutral-700">
+              <p className="max-w-2xl text-base leading-7 text-neutral-700">
                 La propiedad se encuentra en Chapalita, una zona tranquila y bien
                 conectada de Guadalajara. Durante el Mundial 2026, esta ubicación
                 permite desplazamientos eficientes hacia el estadio, Expo
-                Guadalajara y principales puntos de la ciudad, sin sacrificar
-                comodidad ni descanso.
+                Guadalajara y puntos clave de la ciudad, sin sacrificar comodidad
+                ni descanso.
               </p>
               <div className="flex flex-wrap gap-3 text-sm text-neutral-700">
                 <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
@@ -226,7 +229,7 @@ export default function LandingPage({ content }) {
         >
           <h2
             id="direct-trust-title"
-            className="text-2xl font-semibold text-neutral-900"
+            className="text-2xl font-semibold text-neutral-900 sm:text-3xl"
           >
             ¿Por qué reservar directamente?
           </h2>
@@ -259,7 +262,7 @@ export default function LandingPage({ content }) {
         >
           <h2
             id="property-title"
-            className="text-2xl font-semibold text-neutral-900"
+            className="text-2xl font-semibold text-neutral-900 sm:text-3xl"
           >
             {content.property.title}
           </h2>
@@ -302,7 +305,7 @@ export default function LandingPage({ content }) {
         >
           <h2
             id="nearby-title"
-            className="text-2xl font-semibold text-neutral-900"
+            className="text-2xl font-semibold text-neutral-900 sm:text-3xl"
           >
             {content.nearby.title}
           </h2>
@@ -323,7 +326,7 @@ export default function LandingPage({ content }) {
         >
           <h2
             id="final-cta-title"
-            className="text-2xl font-semibold text-neutral-900"
+            className="text-2xl font-semibold text-neutral-900 sm:text-3xl"
           >
             {content.finalCta.title}
           </h2>
@@ -351,7 +354,10 @@ export default function LandingPage({ content }) {
       </div>
 
       <footer className="mx-auto max-w-5xl px-6 py-10">
-        <p className="text-sm text-neutral-600">{content.footer}</p>
+        <p className="text-sm text-neutral-600">
+          Renta directa en Guadalajara para el Mundial 2026. Atención
+          personalizada, comunicación clara y disponibilidad limitada.
+        </p>
       </footer>
     </div>
   );

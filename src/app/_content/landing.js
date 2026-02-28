@@ -4,7 +4,7 @@ export const landingContent = {
     hero: {
       title: "Departamento en renta en Guadalajara para el Mundial 2026",
       subtitle:
-        "Una estancia cómoda y bien ubicada para vivir el torneo con tranquilidad. Este departamento está pensado para viajeros que buscan calidad, privacidad y acceso eficiente a los partidos en Guadalajara. Si tu objetivo es llegar con tiempo al estadio, descansar bien y tener un punto de partida confiable, este espacio está diseñado para eso. Aquí encontrarás un enfoque simple: comunicación directa, condiciones claras y una experiencia de hospedaje enfocada en el Mundial 2026 sin complicaciones. El propósito es que puedas concentrarte en el fútbol, en tu grupo y en la ciudad, con un lugar que se sienta seguro, limpio y funcional. Este es un departamento en renta en Guadalajara para el Mundial 2026 dirigido a quienes valoran la organización y quieren reservar con anticipación para asegurar disponibilidad durante fechas muy demandadas. También es ideal para quienes prefieren un trato cercano e información transparente antes de confirmar. Priorizamos una experiencia premium, sin promesas exageradas, con detalles reales sobre el espacio, la ubicación y lo que puedes esperar durante tu estancia. Si buscas un lugar que equilibre comodidad y logística, aquí encuentras una base sólida para disfrutar cada jornada del torneo.",
+        "Una estancia cómoda y bien ubicada para vivir el torneo con tranquilidad. Este departamento está pensado para viajeros que buscan privacidad, acceso eficiente y un punto de partida confiable en Guadalajara. Aquí encontrarás comunicación directa, condiciones claras y una experiencia enfocada en el Mundial 2026 sin complicaciones. El objetivo es que puedas concentrarte en el fútbol y en tu grupo con un espacio seguro, limpio y funcional. Si buscas un lugar que equilibre comodidad y logística, esta es una base sólida para el viaje.",
       cta: "Solicitar disponibilidad",
     },
     property: {
@@ -23,12 +23,12 @@ export const landingContent = {
     location: {
       title: "Ubicación y cercanía al estadio",
       body:
-        "Guadalajara combina tradición, gastronomía y una infraestructura que facilita los traslados en días de partido. Este departamento se encuentra en una zona con acceso ágil a las principales vías y transporte, lo que te permite llegar al estadio y a las zonas de afición con tiempos razonables. La idea es que tu experiencia sea práctica: menos tiempo en traslados y más tiempo disfrutando el Mundial 2026. Además, la ubicación favorece la movilidad hacia restaurantes, cafés y servicios esenciales para una estancia cómoda y segura. Cuando la ciudad recibe visitantes de todo el mundo, la logística se vuelve clave; por eso priorizamos un punto que facilite salir temprano, volver sin estrés y mantener un ritmo ordenado. Es una opción equilibrada para quienes quieren estar cerca de la acción sin sacrificar descanso, privacidad ni acceso a lo básico. Si vienes en grupo, la zona ayuda a coordinar encuentros y planes sin depender de traslados largos. También es una buena base para explorar distintos puntos de la ciudad en los días de descanso, sin perder tiempo en trayectos innecesarios. Preferimos hablar con claridad sobre distancias y tiempos estimados para que puedas planear con seguridad y evitar sorpresas.",
+        "Guadalajara combina tradición, gastronomía e infraestructura que facilita los traslados en días de partido. El departamento está en una zona con acceso ágil a vías principales y transporte, para llegar al estadio y zonas de afición con tiempos razonables. La idea es simple: menos tiempo en traslados y más tiempo disfrutando el Mundial 2026. Además, la ubicación facilita la movilidad hacia restaurantes, cafés y servicios esenciales, con un enfoque práctico y seguro.",
     },
     map: {
       title: "Mapa y referencia",
       body:
-        "Aquí podrás ver un mapa con la ubicación aproximada y los accesos cercanos. La referencia está pensada para darte contexto sin comprometer la privacidad del inmueble. Al solicitar disponibilidad, compartimos la ubicación exacta y recomendaciones de rutas hacia el estadio. También indicamos puntos de encuentro, opciones de transporte y tiempos estimados en condiciones normales, para que puedas planear con anticipación y evitar contratiempos el día del partido. Si prefieres moverte en coche, te daremos sugerencias de horarios y vías principales. Si usas transporte público, te explicaremos las conexiones más prácticas.",
+        "Aquí podrás ver un mapa con la ubicación aproximada y los accesos cercanos. La referencia ofrece contexto sin comprometer la privacidad del inmueble. Al solicitar disponibilidad, compartimos la ubicación exacta y sugerencias de rutas hacia el estadio. También orientamos sobre opciones de transporte y tiempos estimados en condiciones normales para planear con anticipación.",
     },
     nearby: {
       title: "Qué hacer cerca",
@@ -46,7 +46,7 @@ export const landingContent = {
     gallery: {
       title: "Galería",
       body:
-        "Publicaremos fotos y videos reales del departamento, mostrando áreas comunes, habitaciones y detalles de amenidades. Nuestro objetivo es que tengas claridad total sobre el espacio antes de reservar y que la llegada sea exactamente como la esperas. Verás el estado real del mobiliario, la distribución y el tamaño de cada área, así como una vista general del entorno. Transparencia primero: si algo no es para ti, lo sabrás antes de decidir. También compartiremos imágenes de las áreas comunes del edificio cuando sea posible, para que tengas un panorama completo del entorno. La galería se actualizará de forma responsable y con información útil, sin filtros excesivos ni promesas irreales.",
+        "Publicaremos fotos y videos reales del departamento, incluyendo áreas comunes, habitaciones y detalles de amenidades. El objetivo es que tengas claridad total antes de reservar y que la llegada sea exactamente como la esperas. Verás el estado real del mobiliario, la distribución y el tamaño de cada área. La galería se actualizará con información útil, sin filtros excesivos ni promesas irreales.",
     },
     finalCta: {
       title:
@@ -54,7 +54,7 @@ export const landingContent = {
       cta: "Contactar por WhatsApp",
     },
     footer:
-      "Renta directa en Guadalajara para el Mundial 2026. Atención personalizada, información clara y disponibilidad limitada. Resolvemos dudas con rapidez y compartimos detalles específicos para que tomes una decisión informada. Si necesitas fechas, tarifas o condiciones, contáctanos y te responderemos con datos concretos.",
+      "Renta directa en Guadalajara para el Mundial 2026. Atención personalizada e información clara para una decisión informada. Si necesitas fechas, tarifas o condiciones, contáctanos y te responderemos con datos concretos.",
   },
   en: {
     siteName: "World Cup 2026 Guadalajara · Direct Rental",
