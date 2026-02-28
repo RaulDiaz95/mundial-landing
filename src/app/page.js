@@ -2,9 +2,9 @@ import LandingPage from "./_components/LandingPage";
 import { landingContent } from "./_content/landing";
 
 export const metadata = {
-  title: "Renta cerca del Mundial 2026 en Guadalajara (placeholder)",
+  title: "Departamento en renta en Guadalajara para el Mundial 2026 | Renta Directa",
   description:
-    "Renta una propiedad cómoda y bien ubicada para el Mundial 2026 en Guadalajara. Detalles y disponibilidad próximamente.",
+    "Departamento en renta en Guadalajara para el Mundial 2026. Ubicación estratégica, estancia cómoda y contacto directo sin intermediarios. Consulta disponibilidad.",
   alternates: {
     languages: {
       es: "/",
