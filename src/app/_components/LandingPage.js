@@ -61,7 +61,14 @@ export default function LandingPage({ content }) {
           <h2 id="final-cta-title" className="text-2xl">
             {content.finalCta.title}
           </h2>
-          <button className="text-base">{content.finalCta.cta}</button>
+          <a
+            className="text-base"
+            href="https://wa.me/526691590498?text=Hola%2C%20vi%20el%20departamento%20en%20renta%20en%20Guadalajara%20para%20el%20Mundial%202026%20y%20me%20gustar%C3%ADa%20conocer%20disponibilidad%2C%20fechas%20y%20condiciones.%20Gracias."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {content.finalCta.cta}
+          </a>
         </section>
       </main>
 
