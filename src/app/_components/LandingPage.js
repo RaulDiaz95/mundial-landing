@@ -217,6 +217,92 @@ export default function LandingPage({ content }) {
         </section>
 
         <section
+          aria-labelledby="gallery-department-title"
+          className="space-y-6 rounded-2xl bg-neutral-50 p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+        >
+          <div className="space-y-3">
+            <h2
+              id="gallery-department-title"
+              className="text-2xl font-semibold text-neutral-900"
+            >
+              Galería del departamento
+            </h2>
+            <p className="text-base leading-7 text-neutral-700">
+              Las imágenes del departamento se publicarán una vez completada la
+              sesión fotográfica. Mostramos únicamente fotos reales del espacio
+              para mantener total transparencia.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div
+              className="flex h-44 items-end rounded-2xl bg-neutral-200/60 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] animate-pulse"
+              aria-label="Sala"
+            >
+              <p className="text-sm font-semibold text-neutral-700">Sala</p>
+            </div>
+            <div
+              className="flex h-44 items-end rounded-2xl bg-neutral-200/60 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] animate-pulse"
+              aria-label="Recámara principal"
+            >
+              <p className="text-sm font-semibold text-neutral-700">
+                Recámara principal
+              </p>
+            </div>
+            <div
+              className="flex h-44 items-end rounded-2xl bg-neutral-200/60 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] animate-pulse"
+              aria-label="Cocina"
+            >
+              <p className="text-sm font-semibold text-neutral-700">Cocina</p>
+            </div>
+            <div
+              className="flex h-44 items-end rounded-2xl bg-neutral-200/60 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] animate-pulse"
+              aria-label="Área común"
+            >
+              <p className="text-sm font-semibold text-neutral-700">
+                Área común
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          aria-labelledby="trust-title"
+          className="space-y-6 rounded-2xl bg-neutral-50 p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+        >
+          <div className="space-y-3">
+            <h2
+              id="trust-title"
+              className="text-2xl font-semibold text-neutral-900"
+            >
+              Reserva directa para el Mundial 2026
+            </h2>
+            <p className="text-base leading-7 text-neutral-700">
+              Este departamento se renta de forma directa, con comunicación clara
+              y sin procesos complicados. Compartimos información completa antes
+              de confirmar, para que puedas decidir con tranquilidad.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              "Renta directa, sin intermediarios",
+              "Información clara antes de confirmar",
+              "Respuesta rápida por WhatsApp",
+              "Disponibilidad limitada en fechas clave del Mundial",
+            ].map((item) => (
+              <div
+                key={item}
+                className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
+              >
+                <span className="text-base" aria-label="Indicador de confianza">
+                  ✓
+                </span>
+                <p className="text-sm font-medium text-neutral-800">{item}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section
           aria-labelledby="final-cta-title"
           className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
