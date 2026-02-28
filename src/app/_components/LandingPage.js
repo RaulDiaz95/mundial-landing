@@ -137,6 +137,38 @@ export default function LandingPage({ content }) {
         </section>
 
         <section
+          aria-labelledby="transit-title"
+          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+        >
+          <h2
+            id="transit-title"
+            className="text-2xl font-semibold text-neutral-900"
+          >
+            Ubicación y tiempos de traslado
+          </h2>
+          <div className="flex flex-wrap gap-3 text-sm text-neutral-700">
+            <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
+              Estadio: ~20–30 min en auto
+            </span>
+            <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
+              Zonas de afición: ~25–35 min en transporte privado
+            </span>
+            <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
+              Centro de Guadalajara: ~15–25 min en auto
+            </span>
+            <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
+              Aeropuerto: ~30–45 min en auto
+            </span>
+            <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
+              Transporte público: ~30–45 min con conexiones directas
+            </span>
+          </div>
+          <p className="text-sm text-neutral-600">
+            Tiempos aproximados sujetos a condiciones de tráfico y horario.
+          </p>
+        </section>
+
+        <section
           aria-labelledby="property-title"
           className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
@@ -173,6 +205,39 @@ export default function LandingPage({ content }) {
                 </p>
                 <p className="mt-1 text-sm text-neutral-600">
                   {item}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section
+          aria-labelledby="direct-trust-title"
+          className="space-y-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+        >
+          <h2
+            id="direct-trust-title"
+            className="text-2xl font-semibold text-neutral-900"
+          >
+            ¿Por qué reservar directamente?
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { icon: "🤝", text: "Comunicación directa y sin intermediarios." },
+              { icon: "📄", text: "Información clara antes de confirmar." },
+              { icon: "💬", text: "Respuesta rápida por WhatsApp." },
+              { icon: "🧾", text: "Condiciones transparentes y sencillas." },
+              { icon: "🕒", text: "Coordinación flexible de llegada y salida." },
+            ].map((item) => (
+              <div
+                key={item.text}
+                className="flex items-start gap-3 rounded-2xl bg-neutral-50 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
+              >
+                <span className="text-lg" aria-label="Indicador de confianza">
+                  {item.icon}
+                </span>
+                <p className="text-sm font-medium text-neutral-800">
+                  {item.text}
                 </p>
               </div>
             ))}
