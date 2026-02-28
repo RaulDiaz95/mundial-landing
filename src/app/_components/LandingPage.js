@@ -1,32 +1,63 @@
 export default function LandingPage({ content }) {
   return (
-    <>
+    <div className="min-h-screen bg-neutral-100 overflow-x-hidden">
       <header className="mx-auto max-w-5xl px-6 py-8 sm:py-10">
         <p className="text-sm text-neutral-600">{content.siteName}</p>
       </header>
 
-      <main className="mx-auto max-w-5xl px-6 py-10 space-y-10 sm:space-y-12">
+      <main className="mx-auto max-w-5xl px-6 py-10 space-y-8 sm:space-y-10">
         <section
           aria-labelledby="hero-title"
-          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8"
+          className="-mx-6 border-y border-neutral-200 bg-[radial-gradient(circle_at_top,_rgba(244,244,245,0.7),_rgba(255,255,255,1)_55%)] px-6 py-12 sm:mx-0 sm:rounded-2xl sm:border sm:px-10 sm:py-14"
         >
+          <div className="mx-auto max-w-5xl gap-10 space-y-6 lg:grid lg:grid-cols-12 lg:items-start lg:space-y-0">
+            <div className="order-1 space-y-6 lg:order-1 lg:col-span-7">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-600">
+            World Cup 2026 · Guadalajara
+          </p>
           <h1
             id="hero-title"
-            className="text-3xl font-semibold leading-tight text-neutral-900 sm:text-4xl"
+              className="max-w-2xl text-4xl font-semibold leading-tight text-neutral-900 sm:text-5xl"
           >
             {content.hero.title}
           </h1>
-          <p className="text-base leading-7 text-neutral-700">
+              <p className="max-w-2xl text-base leading-7 text-neutral-700">
             {content.hero.subtitle}
           </p>
-          <button className="text-base font-medium text-neutral-900">
-            {content.hero.cta}
-          </button>
+              <div className="flex flex-wrap gap-2 text-xs text-neutral-700">
+              <span className="rounded-full border border-neutral-200 bg-white/80 px-3 py-1">
+                Guadalajara
+              </span>
+              <span className="rounded-full border border-neutral-200 bg-white/80 px-3 py-1">
+                Renta directa
+              </span>
+              <span className="rounded-full border border-neutral-200 bg-white/80 px-3 py-1">
+                Mundial 2026
+              </span>
+            </div>
+              <button className="inline-flex items-center justify-center rounded-full bg-rose-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-rose-700">
+              {content.hero.cta}
+            </button>
+            </div>
+            <div className="order-2 lg:order-2 lg:col-span-5">
+              <div className="space-y-3">
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-neutral-200 bg-gradient-to-br from-neutral-100 via-white to-neutral-50 shadow-[0_10px_24px_rgba(0,0,0,0.08)]">
+                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/20 via-transparent to-transparent" />
+                  <div className="absolute right-4 top-4 rounded-full border border-rose-100 bg-rose-50 px-3 py-1 text-xs font-semibold text-rose-700">
+                    Disponible · Fechas limitadas
+                  </div>
+                </div>
+                <p className="text-xs text-neutral-600">
+                  Vista real del departamento
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section
           aria-labelledby="property-title"
-          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8"
+          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <h2
             id="property-title"
@@ -34,16 +65,42 @@ export default function LandingPage({ content }) {
           >
             {content.property.title}
           </h2>
-          <ul className="space-y-2 text-neutral-700">
+          <div className="grid grid-cols-2 gap-4 text-neutral-700 sm:grid-cols-3 lg:grid-cols-4">
             {content.property.items.map((item, index) => (
-              <li key={`${item}-${index}`}>{item}</li>
+              <div
+                key={`${item}-${index}`}
+                className="rounded-2xl border border-neutral-200 bg-white p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
+              >
+                <div className="text-lg">
+                  {[
+                    "🛋️",
+                    "🛏️",
+                    "🍽️",
+                    "📶",
+                    "🧳",
+                    "🌤️",
+                    "🚿",
+                    "🔑",
+                    "🧼",
+                    "💻",
+                    "⚡",
+                    "🌙",
+                  ][index % 12]}
+                </div>
+                <p className="mt-2 text-sm font-semibold text-neutral-900">
+                  Amenidad {index + 1}
+                </p>
+                <p className="mt-1 text-sm text-neutral-600">
+                  {item}
+                </p>
+              </div>
             ))}
-          </ul>
+          </div>
         </section>
 
         <section
           aria-labelledby="location-title"
-          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8"
+          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <h2
             id="location-title"
@@ -57,8 +114,55 @@ export default function LandingPage({ content }) {
         </section>
 
         <section
+          aria-labelledby="stadium-location-title"
+          role="region"
+          className="space-y-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+        >
+          <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
+            <div className="space-y-4">
+              <h2
+                id="stadium-location-title"
+                className="text-2xl font-semibold text-neutral-900"
+              >
+                Ubicación y cercanía al estadio
+              </h2>
+              <p className="text-base leading-7 text-neutral-700">
+                La propiedad se encuentra en una zona estratégica de Guadalajara,
+                con acceso ágil a las principales vías de la ciudad. Durante el
+                Mundial 2026, la ubicación permite desplazamientos eficientes hacia
+                el estadio y las zonas de afición, sin sacrificar tranquilidad ni
+                comodidad.
+              </p>
+              <ul className="space-y-2 text-neutral-700">
+                <li>En auto: aproximadamente 20–30 minutos al estadio</li>
+                <li>
+                  Transporte privado: alrededor de 25–35 minutos según horario
+                </li>
+                <li>
+                  Transporte público: entre 30–45 minutos con conexiones directas
+                </li>
+              </ul>
+              <p className="text-sm text-neutral-600">
+                La ubicación exacta se comparte únicamente al contactar para
+                confirmar disponibilidad.
+              </p>
+            </div>
+            <div className="w-full">
+              <iframe
+                className="h-72 w-full rounded-2xl border border-neutral-200 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+                src="https://www.google.com/maps?q=Estadio%20Guadalajara%20Mundial%202026&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+                aria-label="Mapa de ubicación aproximada del estadio en Guadalajara"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section
           aria-labelledby="map-title"
-          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8"
+          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <h2
             id="map-title"
@@ -73,7 +177,7 @@ export default function LandingPage({ content }) {
 
         <section
           aria-labelledby="nearby-title"
-          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8"
+          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <h2
             id="nearby-title"
@@ -81,7 +185,7 @@ export default function LandingPage({ content }) {
           >
             {content.nearby.title}
           </h2>
-          <ul className="space-y-2 text-neutral-700">
+          <ul className="grid gap-3 text-neutral-700 sm:grid-cols-2 sm:gap-4">
             {content.nearby.items.map((item, index) => (
               <li key={`${item}-${index}`}>{item}</li>
             ))}
@@ -90,7 +194,7 @@ export default function LandingPage({ content }) {
 
         <section
           aria-labelledby="gallery-title"
-          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8"
+          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <h2
             id="gallery-title"
@@ -101,11 +205,20 @@ export default function LandingPage({ content }) {
           <p className="text-base leading-7 text-neutral-700">
             {content.gallery.body}
           </p>
+          <div
+            className="grid gap-4 pt-2 sm:grid-cols-2"
+            aria-hidden="true"
+          >
+            <div className="h-36 rounded-xl bg-neutral-100"></div>
+            <div className="h-36 rounded-xl bg-neutral-100"></div>
+            <div className="h-36 rounded-xl bg-neutral-100"></div>
+            <div className="h-36 rounded-xl bg-neutral-100"></div>
+          </div>
         </section>
 
         <section
           aria-labelledby="final-cta-title"
-          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8"
+          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <h2
             id="final-cta-title"
@@ -114,7 +227,7 @@ export default function LandingPage({ content }) {
             {content.finalCta.title}
           </h2>
           <a
-            className="inline-flex items-center justify-center rounded-full bg-neutral-900 px-6 py-3 text-base font-semibold text-white"
+            className="inline-flex items-center justify-center rounded-full bg-rose-600 px-6 py-3 text-base font-semibold text-white hover:bg-rose-700"
             href="https://wa.me/526691590498?text=Hola%2C%20vi%20el%20departamento%20en%20renta%20en%20Guadalajara%20para%20el%20Mundial%202026%20y%20me%20gustar%C3%ADa%20conocer%20disponibilidad%2C%20fechas%20y%20condiciones.%20Gracias."
             target="_blank"
             rel="noopener noreferrer"
@@ -124,9 +237,20 @@ export default function LandingPage({ content }) {
         </section>
       </main>
 
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-neutral-200 bg-white/95 px-4 py-3 backdrop-blur sm:hidden">
+        <a
+          className="inline-flex w-full items-center justify-center rounded-full bg-rose-600 px-6 py-3 text-base font-semibold text-white hover:bg-rose-700"
+          href="https://wa.me/526691590498?text=Hola%2C%20vi%20el%20departamento%20en%20renta%20en%20Guadalajara%20para%20el%20Mundial%202026%20y%20me%20gustar%C3%ADa%20conocer%20disponibilidad%2C%20fechas%20y%20condiciones.%20Gracias."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {content.finalCta.cta}
+        </a>
+      </div>
+
       <footer className="mx-auto max-w-5xl px-6 py-10">
         <p className="text-sm text-neutral-600">{content.footer}</p>
       </footer>
-    </>
+    </div>
   );
 }
