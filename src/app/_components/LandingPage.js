@@ -1,3 +1,5 @@
+import GallerySection from "./GallerySection";
+
 export default function LandingPage({ content }) {
   return (
     <div className="min-h-screen bg-neutral-100 overflow-x-hidden">
@@ -10,36 +12,45 @@ export default function LandingPage({ content }) {
           aria-labelledby="hero-title"
           className="-mx-6 border-y border-neutral-200 bg-[radial-gradient(circle_at_top,_rgba(244,244,245,0.7),_rgba(255,255,255,1)_55%)] px-6 py-12 sm:mx-0 sm:rounded-2xl sm:border sm:px-10 sm:py-14"
         >
-          <div className="mx-auto max-w-5xl gap-10 space-y-6 lg:grid lg:grid-cols-12 lg:items-start lg:space-y-0">
-            <div className="order-1 space-y-6 lg:order-1 lg:col-span-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-600">
-            World Cup 2026 · Guadalajara
-          </p>
-          <h1
-            id="hero-title"
-              className="max-w-2xl text-4xl font-semibold leading-tight text-neutral-900 sm:text-5xl"
-          >
-            {content.hero.title}
-          </h1>
-              <p className="max-w-2xl text-base leading-7 text-neutral-700">
-            {content.hero.subtitle}
-          </p>
-              <div className="flex flex-wrap gap-2 text-xs text-neutral-700">
-              <span className="rounded-full border border-neutral-200 bg-white/80 px-3 py-1">
-                Guadalajara
-              </span>
-              <span className="rounded-full border border-neutral-200 bg-white/80 px-3 py-1">
-                Renta directa
-              </span>
-              <span className="rounded-full border border-neutral-200 bg-white/80 px-3 py-1">
-                Mundial 2026
-              </span>
+          <div className="mx-auto max-w-5xl gap-10 space-y-8 lg:grid lg:grid-cols-12 lg:items-start lg:space-y-0">
+            <div className="order-1 space-y-6 lg:col-span-7 lg:order-1">
+              <div className="space-y-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-600">
+                  WORLD CUP 2026 · GUADALAJARA
+                </p>
+                <h1
+                  id="hero-title"
+                  className="max-w-2xl text-4xl font-semibold leading-tight text-neutral-900 sm:text-5xl"
+                >
+                  {content.hero.title}
+                </h1>
+                <p className="max-w-2xl text-base font-medium leading-7 text-neutral-700">
+                  Estancia privada, bien ubicada y con atención directa para
+                  vivir el Mundial 2026 sin complicaciones.
+                </p>
+                <details className="group max-w-2xl">
+                  <summary className="cursor-pointer list-none text-sm text-neutral-500">
+                    Leer descripción completa
+                  </summary>
+                  <p className="mt-3 text-base leading-7 text-neutral-700">
+                    {content.hero.subtitle}
+                  </p>
+                </details>
+                <div className="flex flex-wrap gap-2 text-xs text-neutral-700">
+                  <span className="rounded-full border border-neutral-200 bg-white/80 px-3 py-1">
+                    Guadalajara
+                  </span>
+                  <span className="rounded-full border border-neutral-200 bg-white/80 px-3 py-1">
+                    Renta directa
+                  </span>
+                  <span className="rounded-full border border-neutral-200 bg-white/80 px-3 py-1">
+                    Mundial 2026
+                  </span>
+                </div>
+              </div>
             </div>
-              <button className="inline-flex items-center justify-center rounded-full bg-rose-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-rose-700">
-              {content.hero.cta}
-            </button>
-            </div>
-            <div className="order-2 lg:order-2 lg:col-span-5">
+
+            <div className="order-2 lg:col-span-5 lg:order-2">
               <div className="space-y-3">
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-neutral-200 bg-gradient-to-br from-neutral-100 via-white to-neutral-50 shadow-[0_10px_24px_rgba(0,0,0,0.08)]">
                   <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/20 via-transparent to-transparent" />
@@ -52,6 +63,76 @@ export default function LandingPage({ content }) {
                 </p>
               </div>
             </div>
+
+            <div className="order-3 space-y-4 lg:col-span-7 lg:order-3">
+              <a
+                className="inline-flex items-center justify-center rounded-full bg-rose-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-rose-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2"
+                href="https://wa.me/526691590498?text=Hola%2C%20me%20interesa%20el%20departamento%20para%20el%20Mundial%202026%20en%20Guadalajara.%20%C2%BFQu%C3%A9%20fechas%20tienes%20disponibles%20y%20cu%C3%A1l%20es%20el%20proceso%20de%20reserva%3F"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Consultar disponibilidad
+              </a>
+              <p className="text-sm text-neutral-500">
+                Respuesta rápida por WhatsApp · Fechas limitadas
+              </p>
+            </div>
+
+            <div className="order-4 lg:col-span-7 lg:order-4">
+              <ul className="space-y-2 text-sm text-neutral-700">
+                <li className="flex items-start gap-2">
+                  <span className="text-rose-600" aria-hidden="true">
+                    ✓
+                  </span>
+                  Ubicación estratégica en Guadalajara
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-rose-600" aria-hidden="true">
+                    ✓
+                  </span>
+                  Comunicación directa y respuesta rápida
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-rose-600" aria-hidden="true">
+                    ✓
+                  </span>
+                  Espacio cómodo, tranquilo y bien cuidado
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section
+          aria-labelledby="summary-title"
+          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+        >
+          <h2
+            id="summary-title"
+            className="text-2xl font-semibold text-neutral-900"
+          >
+            Resumen del departamento
+          </h2>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+            {[
+              { icon: "👥", label: "Huéspedes", value: "Hasta 4" },
+              { icon: "🛏️", label: "Recámaras", value: "2" },
+              { icon: "🚿", label: "Baños", value: "1" },
+              { icon: "📶", label: "Wi‑Fi", value: "Incluido" },
+              { icon: "🚗", label: "Estacionamiento", value: "Consultar" },
+              { icon: "❄️", label: "Aire acondicionado", value: "Consultar" },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="rounded-2xl border border-neutral-200 bg-white p-4 text-center shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
+              >
+                <div className="text-lg">{item.icon}</div>
+                <p className="mt-2 text-xs font-semibold text-neutral-700">
+                  {item.label}
+                </p>
+                <p className="mt-1 text-sm text-neutral-900">{item.value}</p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -216,54 +297,7 @@ export default function LandingPage({ content }) {
           </div>
         </section>
 
-        <section
-          aria-labelledby="gallery-department-title"
-          className="space-y-6 rounded-2xl bg-neutral-50 p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
-        >
-          <div className="space-y-3">
-            <h2
-              id="gallery-department-title"
-              className="text-2xl font-semibold text-neutral-900"
-            >
-              Galería del departamento
-            </h2>
-            <p className="text-base leading-7 text-neutral-700">
-              Las imágenes del departamento se publicarán una vez completada la
-              sesión fotográfica. Mostramos únicamente fotos reales del espacio
-              para mantener total transparencia.
-            </p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div
-              className="flex h-44 items-end rounded-2xl bg-neutral-200/60 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] animate-pulse"
-              aria-label="Sala"
-            >
-              <p className="text-sm font-semibold text-neutral-700">Sala</p>
-            </div>
-            <div
-              className="flex h-44 items-end rounded-2xl bg-neutral-200/60 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] animate-pulse"
-              aria-label="Recámara principal"
-            >
-              <p className="text-sm font-semibold text-neutral-700">
-                Recámara principal
-              </p>
-            </div>
-            <div
-              className="flex h-44 items-end rounded-2xl bg-neutral-200/60 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] animate-pulse"
-              aria-label="Cocina"
-            >
-              <p className="text-sm font-semibold text-neutral-700">Cocina</p>
-            </div>
-            <div
-              className="flex h-44 items-end rounded-2xl bg-neutral-200/60 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] animate-pulse"
-              aria-label="Área común"
-            >
-              <p className="text-sm font-semibold text-neutral-700">
-                Área común
-              </p>
-            </div>
-          </div>
-        </section>
+        <GallerySection />
 
         <section
           aria-labelledby="trust-title"
@@ -313,12 +347,12 @@ export default function LandingPage({ content }) {
             {content.finalCta.title}
           </h2>
           <a
-            className="inline-flex items-center justify-center rounded-full bg-rose-600 px-6 py-3 text-base font-semibold text-white hover:bg-rose-700"
-            href="https://wa.me/526691590498?text=Hola%2C%20vi%20el%20departamento%20en%20renta%20en%20Guadalajara%20para%20el%20Mundial%202026%20y%20me%20gustar%C3%ADa%20conocer%20disponibilidad%2C%20fechas%20y%20condiciones.%20Gracias."
+            className="inline-flex items-center justify-center rounded-full bg-rose-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-rose-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2"
+            href="https://wa.me/526691590498?text=Hola%2C%20me%20interesa%20el%20departamento%20para%20el%20Mundial%202026%20en%20Guadalajara.%20%C2%BFQu%C3%A9%20fechas%20tienes%20disponibles%20y%20cu%C3%A1l%20es%20el%20proceso%20de%20reserva%3F"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {content.finalCta.cta}
+            Contactar por WhatsApp
           </a>
         </section>
       </main>
