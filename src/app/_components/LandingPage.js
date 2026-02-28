@@ -25,8 +25,12 @@ export default function LandingPage({ content }) {
                   {content.hero.title}
                 </h1>
                 <p className="max-w-2xl text-base font-medium leading-7 text-neutral-700">
-                  Estancia privada, bien ubicada y con atención directa para
-                  vivir el Mundial 2026 sin complicaciones.
+                  Estancia privada en una zona estratégica de Guadalajara, con
+                  atención directa y sin intermediarios para el Mundial 2026.
+                </p>
+                <p className="max-w-2xl text-base leading-7 text-neutral-700">
+                  Diseñado para viajeros que buscan comodidad, privacidad y
+                  traslados eficientes durante el torneo.
                 </p>
                 <details className="group max-w-2xl">
                   <summary className="cursor-pointer list-none text-sm text-neutral-500">
@@ -84,19 +88,19 @@ export default function LandingPage({ content }) {
                   <span className="text-rose-600" aria-hidden="true">
                     ✓
                   </span>
-                  Ubicación estratégica en Guadalajara
+                  Zona estratégica con fácil acceso a estadio y Expo
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-rose-600" aria-hidden="true">
                     ✓
                   </span>
-                  Comunicación directa y respuesta rápida
+                  Comunicación directa y respuesta rápida por WhatsApp
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-rose-600" aria-hidden="true">
                     ✓
                   </span>
-                  Espacio cómodo, tranquilo y bien cuidado
+                  Espacio privado, cómodo y cuidadosamente mantenido
                 </li>
               </ul>
             </div>
@@ -115,12 +119,16 @@ export default function LandingPage({ content }) {
           </h2>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
             {[
-              { icon: "👥", label: "Huéspedes", value: "Hasta 4" },
+              { icon: "👥", label: "Hasta 4 personas", value: "Hasta 4" },
               { icon: "🛏️", label: "Recámaras", value: "2" },
               { icon: "🚿", label: "Baños", value: "1" },
-              { icon: "📶", label: "Wi‑Fi", value: "Incluido" },
-              { icon: "🚗", label: "Estacionamiento", value: "Consultar" },
-              { icon: "❄️", label: "Aire acondicionado", value: "Consultar" },
+              {
+                icon: "📶",
+                label: "Wi‑Fi de alta velocidad incluido",
+                value: "Incluido",
+              },
+              { icon: "🚗", label: "Consultar disponibilidad", value: "Consultar" },
+              { icon: "❄️", label: "Consultar disponibilidad", value: "Consultar" },
             ].map((item) => (
               <div
                 key={item.label}
@@ -137,35 +145,112 @@ export default function LandingPage({ content }) {
         </section>
 
         <section
-          aria-labelledby="transit-title"
-          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+          aria-labelledby="stadium-location-title"
+          role="region"
+          className="space-y-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+        >
+          <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <h2
+                  id="stadium-location-title"
+                  className="text-2xl font-semibold text-neutral-900"
+                >
+                  Ubicación estratégica en Chapalita · Conectividad clave para el
+                  Mundial 2026
+                </h2>
+                <p className="text-sm text-neutral-600">
+                  Zona tranquila, bien conectada y con acceso eficiente a estadio,
+                  Expo y zonas de afición.
+                </p>
+              </div>
+              <p className="text-base leading-7 text-neutral-700">
+                La propiedad se encuentra en Chapalita, una zona tranquila y bien
+                conectada de Guadalajara. Durante el Mundial 2026, esta ubicación
+                permite desplazamientos eficientes hacia el estadio, Expo
+                Guadalajara y principales puntos de la ciudad, sin sacrificar
+                comodidad ni descanso.
+              </p>
+              <div className="flex flex-wrap gap-3 text-sm text-neutral-700">
+                <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
+                  🏟 Estadio Akron · ~25–40 min en auto
+                </span>
+                <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
+                  🏢 Expo Guadalajara · ~10–20 min en auto
+                </span>
+                <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
+                  🏙 Centro de Guadalajara · ~20–35 min en auto
+                </span>
+                <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
+                  ✈️ Aeropuerto GDL · ~30–45 min en auto
+                </span>
+              </div>
+              <p className="text-sm text-neutral-600">
+                Tiempos aproximados, sujetos a condiciones de tráfico y horario.
+              </p>
+              <p className="text-sm text-neutral-600">
+                La ubicación exacta se comparte únicamente al confirmar
+                disponibilidad.
+              </p>
+            </div>
+            <div className="w-full">
+              <iframe
+                className="h-72 w-full rounded-2xl border border-neutral-200 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+                src="https://www.google.com/maps?q=Classiqa%20Chapalita%2C%20Av.%20Nicol%C3%A1s%20Cop%C3%A9rnico%20943A%2C%20Atlas%20Chapalita%2C%2045030%20Zapopan%2C%20Jal.%2C%20M%C3%A9xico&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+                aria-label="Mapa de ubicación aproximada en Guadalajara"
+              />
+              <div className="mt-4 space-y-3 text-sm text-neutral-700">
+                <p className="font-semibold text-neutral-900">
+                  Classiqa Chapalita — Av. Nicolás Copérnico 943A, Atlas Chapalita,
+                  45030 Zapopan, Jal.
+                </p>
+                <a
+                  className="inline-flex items-center justify-center rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-700 shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
+                  href="https://www.google.com/maps?q=Classiqa%20Chapalita%2C%20Av.%20Nicol%C3%A1s%20Cop%C3%A9rnico%20943A%2C%20Atlas%20Chapalita%2C%2045030%20Zapopan%2C%20Jal.%2C%20M%C3%A9xico"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Abrir en Google Maps
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          aria-labelledby="direct-trust-title"
+          className="space-y-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <h2
-            id="transit-title"
+            id="direct-trust-title"
             className="text-2xl font-semibold text-neutral-900"
           >
-            Ubicación y tiempos de traslado
+            ¿Por qué reservar directamente?
           </h2>
-          <div className="flex flex-wrap gap-3 text-sm text-neutral-700">
-            <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
-              Estadio: ~20–30 min en auto
-            </span>
-            <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
-              Zonas de afición: ~25–35 min en transporte privado
-            </span>
-            <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
-              Centro de Guadalajara: ~15–25 min en auto
-            </span>
-            <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
-              Aeropuerto: ~30–45 min en auto
-            </span>
-            <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
-              Transporte público: ~30–45 min con conexiones directas
-            </span>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { icon: "🤝", text: "Comunicación directa, sin intermediarios" },
+              { icon: "📄", text: "Información clara antes de confirmar" },
+              { icon: "💬", text: "Respuesta rápida por WhatsApp" },
+              { icon: "🧾", text: "Condiciones transparentes y sencillas" },
+              { icon: "🕒", text: "Coordinación flexible de llegada y salida" },
+            ].map((item) => (
+              <div
+                key={item.text}
+                className="flex items-start gap-3 rounded-2xl bg-neutral-50 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
+              >
+                <span className="text-lg" aria-label="Indicador de confianza">
+                  {item.icon}
+                </span>
+                <p className="text-sm font-medium text-neutral-800">
+                  {item.text}
+                </p>
+              </div>
+            ))}
           </div>
-          <p className="text-sm text-neutral-600">
-            Tiempos aproximados sujetos a condiciones de tráfico y horario.
-          </p>
         </section>
 
         <section
@@ -212,116 +297,6 @@ export default function LandingPage({ content }) {
         </section>
 
         <section
-          aria-labelledby="direct-trust-title"
-          className="space-y-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
-        >
-          <h2
-            id="direct-trust-title"
-            className="text-2xl font-semibold text-neutral-900"
-          >
-            ¿Por qué reservar directamente?
-          </h2>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { icon: "🤝", text: "Comunicación directa y sin intermediarios." },
-              { icon: "📄", text: "Información clara antes de confirmar." },
-              { icon: "💬", text: "Respuesta rápida por WhatsApp." },
-              { icon: "🧾", text: "Condiciones transparentes y sencillas." },
-              { icon: "🕒", text: "Coordinación flexible de llegada y salida." },
-            ].map((item) => (
-              <div
-                key={item.text}
-                className="flex items-start gap-3 rounded-2xl bg-neutral-50 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
-              >
-                <span className="text-lg" aria-label="Indicador de confianza">
-                  {item.icon}
-                </span>
-                <p className="text-sm font-medium text-neutral-800">
-                  {item.text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section
-          aria-labelledby="location-title"
-          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
-        >
-          <h2
-            id="location-title"
-            className="text-2xl font-semibold text-neutral-900"
-          >
-            {content.location.title}
-          </h2>
-          <p className="text-base leading-7 text-neutral-700">
-            {content.location.body}
-          </p>
-        </section>
-
-        <section
-          aria-labelledby="stadium-location-title"
-          role="region"
-          className="space-y-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
-        >
-          <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
-            <div className="space-y-4">
-              <h2
-                id="stadium-location-title"
-                className="text-2xl font-semibold text-neutral-900"
-              >
-                Ubicación y cercanía al estadio
-              </h2>
-              <p className="text-base leading-7 text-neutral-700">
-                La propiedad se encuentra en una zona estratégica de Guadalajara,
-                con acceso ágil a las principales vías de la ciudad. Durante el
-                Mundial 2026, la ubicación permite desplazamientos eficientes hacia
-                el estadio y las zonas de afición, sin sacrificar tranquilidad ni
-                comodidad.
-              </p>
-              <ul className="space-y-2 text-neutral-700">
-                <li>En auto: aproximadamente 20–30 minutos al estadio</li>
-                <li>
-                  Transporte privado: alrededor de 25–35 minutos según horario
-                </li>
-                <li>
-                  Transporte público: entre 30–45 minutos con conexiones directas
-                </li>
-              </ul>
-              <p className="text-sm text-neutral-600">
-                La ubicación exacta se comparte únicamente al contactar para
-                confirmar disponibilidad.
-              </p>
-            </div>
-            <div className="w-full">
-              <iframe
-                className="h-72 w-full rounded-2xl border border-neutral-200 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
-                src="https://www.google.com/maps?q=Estadio%20Guadalajara%20Mundial%202026&output=embed"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-                aria-label="Mapa de ubicación aproximada del estadio en Guadalajara"
-              />
-            </div>
-          </div>
-        </section>
-
-        <section
-          aria-labelledby="map-title"
-          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
-        >
-          <h2
-            id="map-title"
-            className="text-2xl font-semibold text-neutral-900"
-          >
-            {content.map.title}
-          </h2>
-          <p className="text-base leading-7 text-neutral-700">
-            {content.map.body}
-          </p>
-        </section>
-
-        <section
           aria-labelledby="nearby-title"
           className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
@@ -338,68 +313,9 @@ export default function LandingPage({ content }) {
           </ul>
         </section>
 
-        <section
-          aria-labelledby="gallery-title"
-          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
-        >
-          <h2
-            id="gallery-title"
-            className="text-2xl font-semibold text-neutral-900"
-          >
-            {content.gallery.title}
-          </h2>
-          <p className="text-base leading-7 text-neutral-700">
-            {content.gallery.body}
-          </p>
-          <div
-            className="grid gap-4 pt-2 sm:grid-cols-2"
-            aria-hidden="true"
-          >
-            <div className="h-36 rounded-xl bg-neutral-100"></div>
-            <div className="h-36 rounded-xl bg-neutral-100"></div>
-            <div className="h-36 rounded-xl bg-neutral-100"></div>
-            <div className="h-36 rounded-xl bg-neutral-100"></div>
-          </div>
-        </section>
-
         <GallerySection />
 
-        <section
-          aria-labelledby="trust-title"
-          className="space-y-6 rounded-2xl bg-neutral-50 p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
-        >
-          <div className="space-y-3">
-            <h2
-              id="trust-title"
-              className="text-2xl font-semibold text-neutral-900"
-            >
-              Reserva directa para el Mundial 2026
-            </h2>
-            <p className="text-base leading-7 text-neutral-700">
-              Este departamento se renta de forma directa, con comunicación clara
-              y sin procesos complicados. Compartimos información completa antes
-              de confirmar, para que puedas decidir con tranquilidad.
-            </p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {[
-              "Renta directa, sin intermediarios",
-              "Información clara antes de confirmar",
-              "Respuesta rápida por WhatsApp",
-              "Disponibilidad limitada en fechas clave del Mundial",
-            ].map((item) => (
-              <div
-                key={item}
-                className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
-              >
-                <span className="text-base" aria-label="Indicador de confianza">
-                  ✓
-                </span>
-                <p className="text-sm font-medium text-neutral-800">{item}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+        
 
         <section
           aria-labelledby="final-cta-title"
@@ -420,6 +336,7 @@ export default function LandingPage({ content }) {
             Contactar por WhatsApp
           </a>
         </section>
+
       </main>
 
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-neutral-200 bg-white/95 px-4 py-3 backdrop-blur sm:hidden">

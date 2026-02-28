@@ -30,9 +30,9 @@ export default function GallerySection() {
           Galería del departamento
         </h2>
         <p className="text-base leading-7 text-neutral-700">
-          Las imágenes del departamento se publicarán una vez completada la
-          sesión fotográfica. Mostramos únicamente fotos reales del espacio para
-          mantener total transparencia.
+          Publicaremos fotografías reales del departamento una vez finalizada la
+          sesión fotográfica. Mostramos únicamente imágenes reales para mantener
+          total transparencia.
         </p>
       </div>
 
