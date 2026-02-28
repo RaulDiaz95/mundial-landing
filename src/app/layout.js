@@ -13,12 +13,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  verification: {
-    google: "air9_DRe4AaygnjaI",
-  },
-};
-
 export default async function RootLayout({ children }) {
   const cookieStore = await cookies();
   const locale = cookieStore.get("NEXT_LOCALE")?.value;

@@ -5,6 +5,9 @@ export const metadata = {
   title: "Departamento en renta en Guadalajara para el Mundial 2026 | Renta Directa",
   description:
     "Departamento en renta en Guadalajara para el Mundial 2026. Ubicación estratégica, estancia cómoda y contacto directo sin intermediarios. Consulta disponibilidad.",
+  verification: {
+    google: "air9_DRe4AaygnjaI",
+  },
   alternates: {
     languages: {
       es: "/",
