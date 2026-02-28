@@ -129,9 +129,9 @@ export default function LandingPage({ content }) {
               },
               { icon: "🚗", label: "Consultar disponibilidad", value: "Consultar" },
               { icon: "❄️", label: "Consultar disponibilidad", value: "Consultar" },
-            ].map((item) => (
+            ].map((item, index) => (
               <div
-                key={item.label}
+                key={`${item.label}-${index}`}
                 className="rounded-2xl border border-neutral-200 bg-white p-4 text-center shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
               >
                 <div className="text-lg">{item.icon}</div>
