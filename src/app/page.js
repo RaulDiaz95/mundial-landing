@@ -2,9 +2,9 @@
 import { landingContent } from "./_content/landing";
 
 export const metadata = {
-  title: "Guadalajara World Cup 2026 apartment rental | Direct Booking",
+  title: "Departamento en renta en Guadalajara para el Mundial 2026 | Renta Directa",
   description:
-    "Apartment rental in Guadalajara for World Cup 2026. Strategic location, comfortable stay, and direct contact with no intermediaries. Check availability.",
+    "Departamento en renta en Guadalajara para el Mundial 2026. Ubicación estratégica, estancia cómoda y contacto directo sin intermediarios. Consulta disponibilidad.",
   alternates: {
     languages: {
       es: "/",
@@ -15,5 +15,5 @@ export const metadata = {
 };
 
 export default function Home() {
-  return <LandingPage content={landingContent.en} />;
+  return <LandingPage content={landingContent.es} />;
 }

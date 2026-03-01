@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import GallerySection from "./GallerySection";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function LandingPage({ content }) {
   const whatsappMessage = content.whatsapp.message;
@@ -88,6 +89,7 @@ export default function LandingPage({ content }) {
 
   return (
     <div className="min-h-screen overflow-x-hidden">
+      <LanguageSwitcher />
       <main className="mx-auto max-w-5xl lg:max-w-[1280px] px-6 pt-6 pb-6 lg:pt-2 space-y-10 sm:space-y-12">
         <section
           aria-labelledby="hero-title"
