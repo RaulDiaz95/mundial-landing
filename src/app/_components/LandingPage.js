@@ -89,9 +89,7 @@ export default function LandingPage({ content }) {
 
   return (
     <div className="min-h-screen overflow-x-hidden">
-      <header className="mx-auto max-w-5xl lg:max-w-[1280px] px-6 py-4 sm:py-6" />
-
-      <main className="mx-auto max-w-5xl lg:max-w-[1280px] px-6 py-6 space-y-10 sm:space-y-12">
+      <main className="mx-auto max-w-5xl lg:max-w-[1280px] px-6 pt-6 pb-6 lg:pt-2 space-y-10 sm:space-y-12">
         <section
           aria-labelledby="hero-title"
           className="-mx-6 border-y border-neutral-200 bg-[radial-gradient(circle_at_top,_rgba(244,244,245,0.7),_rgba(255,255,255,1)_55%)] px-6 py-12 sm:mx-0 sm:rounded-2xl sm:border sm:px-10 sm:py-14 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]"
