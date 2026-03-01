@@ -3,6 +3,8 @@
 :root {
   --background: #f6f3ef;
   --foreground: #171717;
+  /* Debug toggle for ambient background visibility (0 = off, 1 = on). */
+  --bg-debug: 0;
 }
 
 @theme inline {
@@ -19,45 +21,80 @@
   }
 }
 
-body {
+html {
   background: #ffffff;
+  height: 100%;
+}
+
+body {
+  background: transparent;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
+  isolation: isolate;
+  min-height: 100%;
 }
 
-body::before {
-  content: "";
+#ambient-bg {
   position: fixed;
-  inset: -10% -10% -10% -10%;
-  z-index: -1;
+  inset: 0;
+  z-index: 0;
   pointer-events: none;
-  background-color: #ffffff;
-  background-image:
-    radial-gradient(1200px 600px at 20% 15%, rgba(0, 0, 0, 0.12), transparent 60%),
-    radial-gradient(900px 520px at 80% 20%, rgba(0, 0, 0, 0.1), transparent 62%),
-    radial-gradient(1100px 700px at 30% 85%, rgba(0, 0, 0, 0.11), transparent 60%),
-    radial-gradient(800px 500px at 85% 75%, rgba(0, 0, 0, 0.09), transparent 58%);
-  filter: blur(6px);
-  opacity: 0.15;
-  will-change: transform, opacity;
-  transform: translateZ(0);
-  animation: premiumFloat 34s ease-in-out infinite;
+  overflow: hidden;
+  background: #f7f4f1;
 }
 
-@keyframes premiumFloat {
-  0% {
-    transform: translate3d(0, 0, 0) scale(1);
-    opacity: 0.14;
-  }
-  50% {
-    transform: translate3d(-24px, 32px, 0) scale(1.02);
-    opacity: 0.17;
-  }
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
-    opacity: 0.15;
-  }
+#ambient-bg::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(1200px 700px at 20% 20%, rgba(0, 0, 0, 0.18), transparent 60%),
+    radial-gradient(1000px 600px at 80% 30%, rgba(0, 0, 0, 0.14), transparent 60%),
+    radial-gradient(1100px 700px at 50% 85%, rgba(0, 0, 0, 0.12), transparent 60%);
+  filter: blur(40px);
+  opacity: 0.6;
+}
+
+#ambient-bg::after {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background:
+    radial-gradient(600px 600px at 30% 30%, rgba(0, 0, 0, 0.12), transparent 60%),
+    radial-gradient(500px 500px at 70% 60%, rgba(0, 0, 0, 0.1), transparent 60%);
+  filter: blur(50px);
+  animation: blobFloat 28s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+#app-content {
+  position: relative;
+  z-index: 1;
+}
+
+.ambient-particles {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(0, 0, 0, 0.18) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(0, 0, 0, 0.12) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(0, 0, 0, 0.10) 0 1px, transparent 1.5px);
+  background-size: 180px 180px, 260px 260px, 340px 340px;
+  background-position: 0 0, 120px 200px, 240px 80px;
+  opacity: 0.12;
+  animation: particleDrift 22s linear infinite;
+}
+
+@keyframes blobFloat {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-60px, 40px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes particleDrift {
+  from { transform: translateY(0); }
+  to { transform: translateY(-120px); }
 }
 
 @layer utilities {
@@ -144,7 +181,16 @@ body::before {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body::before {
+  #ambient-bg {
+    animation: none;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #ambient-bg::before,
+  #ambient-bg::after,
+  .ambient-particles {
     animation: none;
     transform: none;
   }

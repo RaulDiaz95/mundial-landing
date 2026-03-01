@@ -126,7 +126,7 @@ export default function GallerySection() {
     <>
       <section
         aria-labelledby="gallery-department-title"
-        className="reveal space-y-6 rounded-2xl bg-white/95 p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+        className="reveal space-y-6 rounded-2xl bg-white/80 backdrop-blur-sm p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
       >
         <div className="space-y-3">
           <h2
@@ -159,7 +159,7 @@ export default function GallerySection() {
 
       <section
         aria-labelledby="gallery-amenities-title"
-        className="reveal space-y-6 rounded-2xl bg-white/95 p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+        className="reveal space-y-6 rounded-2xl bg-white/80 backdrop-blur-sm p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
       >
         <div className="space-y-3">
           <h3

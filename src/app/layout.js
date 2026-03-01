@@ -58,12 +58,17 @@ export default async function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div id="ambient-bg">
+          <div className="ambient-particles" />
+        </div>
+        <div id="app-content">
         <Script
           id="lodgingbusiness-jsonld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
+        </div>
       </body>
     </html>
   );

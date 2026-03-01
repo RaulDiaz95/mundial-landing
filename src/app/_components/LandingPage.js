@@ -217,7 +217,7 @@ export default function LandingPage({ content }) {
 
         <section
           aria-labelledby="summary-title"
-          className="reveal space-y-4 rounded-2xl border border-neutral-200 bg-white/95 p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+          className="reveal space-y-4 rounded-2xl border border-neutral-200 bg-white/80 backdrop-blur-sm p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <h2
             id="summary-title"
@@ -236,7 +236,7 @@ export default function LandingPage({ content }) {
             ].map((item, index) => (
               <div
                 key={`${item.label}-${index}`}
-                className="reveal group rounded-2xl border border-neutral-200 bg-white p-4 text-center shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:shadow-md motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]"
+                className="reveal group rounded-2xl border border-neutral-200 bg-white/80 backdrop-blur-sm p-4 text-center shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:shadow-md motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]"
               >
                 {[
                   {
@@ -311,7 +311,7 @@ export default function LandingPage({ content }) {
 
         <section
           aria-labelledby="property-title"
-          className="reveal space-y-4 rounded-2xl border border-neutral-200 bg-white/95 p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+          className="reveal space-y-4 rounded-2xl border border-neutral-200 bg-white/80 backdrop-blur-sm p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <h2
             id="property-title"
@@ -367,7 +367,7 @@ export default function LandingPage({ content }) {
             ].map((item, index) => (
               <div
                 key={`${item.description}-${index}`}
-                className="reveal group rounded-2xl border border-neutral-200 bg-white p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]"
+                className="reveal group rounded-2xl border border-neutral-200 bg-white/80 backdrop-blur-sm p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]"
               >
                 <span
                   className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-50 ring-1 ring-gray-200 transition-transform duration-300 ease-out group-hover:scale-105"
@@ -399,7 +399,7 @@ export default function LandingPage({ content }) {
         <section
           aria-labelledby="stadium-location-title"
           role="region"
-          className="reveal space-y-6 rounded-2xl border border-neutral-200 bg-white/95 p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+          className="reveal space-y-6 rounded-2xl border border-neutral-200 bg-white/80 backdrop-blur-sm p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
             <div className="space-y-4">
@@ -465,7 +465,7 @@ export default function LandingPage({ content }) {
 
         <section
           aria-labelledby="direct-trust-title"
-          className="reveal space-y-6 rounded-2xl border border-neutral-200 bg-white/95 p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+          className="reveal space-y-6 rounded-2xl border border-neutral-200 bg-white/80 backdrop-blur-sm p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <h2
             id="direct-trust-title"
@@ -511,7 +511,7 @@ export default function LandingPage({ content }) {
 
         <section
           aria-labelledby="nearby-title"
-          className="reveal space-y-4 rounded-2xl border border-neutral-200 bg-white/95 p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+          className="reveal space-y-4 rounded-2xl border border-neutral-200 bg-white/80 backdrop-blur-sm p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <h2
             id="nearby-title"
@@ -563,7 +563,7 @@ export default function LandingPage({ content }) {
         </section>
       </main>
 
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-neutral-200 bg-white/95 px-4 py-3 backdrop-blur sm:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-neutral-200 bg-white/80 px-4 py-3 backdrop-blur-sm sm:hidden">
         <a
           className="inline-flex w-full items-center justify-center rounded-full bg-rose-600 px-6 py-3 text-base font-semibold text-white hover:bg-rose-700"
           href="https://wa.me/526691590498text=Hola%2C%20me%20interesa%20el%20departamento%20para%20el%20Mundial%202026%20en%20Guadalajara.%20%C2%BFQu%C3%A9%20fechas%20tienes%20disponibles%20y%20cu%C3%A1l%20es%20el%20proceso%20de%20reserva%3F"
