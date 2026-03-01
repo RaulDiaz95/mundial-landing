@@ -1,6 +1,27 @@
 import GallerySection from "./GallerySection";
 
 export default function LandingPage({ content }) {
+  const amenityIcons = [
+    "M3 11.25 12 4l9 7.25M5.25 10.75V20a1 1 0 0 0 1 1h11.5a1 1 0 0 0 1-1v-9.25",
+    "M4.5 12.75h15M6 12.75V10.5a2.25 2.25 0 0 1 2.25-2.25h4.5A2.25 2.25 0 0 1 15 10.5v2.25M4.5 12.75V18M19.5 12.75V18",
+    "M7.5 3.75h9v16.5h-9zM10.5 7.5h3M10.5 11.25h3",
+    "M5.25 10.5a9.75 9.75 0 0 1 13.5 0M8.25 13.5a6 6 0 0 1 7.5 0M12 16.5h.01",
+    "M4.5 13.5h15M6 13.5V8.25a2.25 2.25 0 1 1 4.5 0V13.5M9 17.25v2.25M15 17.25v2.25",
+    "M6.75 4.5h10.5v15h-10.5zM9 4.5V3h6v1.5M11.25 12h1.5",
+    "M4.5 12h15v4.5h-15zM6.75 12V9a2.25 2.25 0 0 1 2.25-2.25h6A2.25 2.25 0 0 1 17.25 9v3",
+    "M6.75 15.75c5.25-1.5 8.25-4.5 9.75-9.75-5.25 1.5-8.25 4.5-9.75 9.75zM6.75 15.75 12.75 21.75",
+  ];
+  const amenityIconColors = [
+    "text-rose-500",
+    "text-emerald-500",
+    "text-amber-500",
+    "text-sky-500",
+    "text-emerald-500",
+    "text-amber-500",
+    "text-rose-500",
+    "text-emerald-500",
+  ];
+
   return (
     <div className="min-h-screen bg-neutral-100 overflow-x-hidden">
       <header className="mx-auto max-w-5xl px-6 py-8 sm:py-10">
@@ -71,37 +92,61 @@ export default function LandingPage({ content }) {
             <div className="order-3 space-y-4 lg:col-span-7 lg:order-3">
               <a
                 className="inline-flex items-center justify-center rounded-full bg-rose-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-rose-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2"
-                href="https://wa.me/526691590498?text=Hola%2C%20me%20interesa%20el%20departamento%20para%20el%20Mundial%202026%20en%20Guadalajara.%20%C2%BFQu%C3%A9%20fechas%20tienes%20disponibles%20y%20cu%C3%A1l%20es%20el%20proceso%20de%20reserva%3F"
+                href="https://wa.me/526691590498text=Hola%2C%20me%20interesa%20el%20departamento%20para%20el%20Mundial%202026%20en%20Guadalajara.%20%C2%BFQu%C3%A9%20fechas%20tienes%20disponibles%20y%20cu%C3%A1l%20es%20el%20proceso%20de%20reserva%3F"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Consultar disponibilidad
               </a>
               <p className="text-sm text-neutral-500">
-                Respuesta rápida por WhatsApp · Fechas limitadas
-              </p>
-              <p className="text-sm text-neutral-500">
-                No solicitamos pagos sin antes compartir información completa
+                Respuesta rápida y contacto directo por WhatsApp
               </p>
             </div>
 
             <div className="order-4 lg:col-span-7 lg:order-4">
               <ul className="space-y-2 text-sm text-neutral-700">
                 <li className="flex items-start gap-2">
-                  <span className="text-rose-600" aria-hidden="true">
-                    ✓
+                  <span
+                    className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-rose-100 text-rose-600"
+                    aria-hidden="true"
+                  >
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="h-3 w-3"
+                    >
+                      <path d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.2 7.2a1 1 0 0 1-1.4 0L3.3 9.1a1 1 0 1 1 1.4-1.4l3.1 3.1 6.5-6.5a1 1 0 0 1 1.4 0z" />
+                    </svg>
                   </span>
-                  Zona estratégica con fácil acceso a estadio y Expo
+                  Zona estratégica con f?cil acceso a estadio y Expo
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-rose-600" aria-hidden="true">
-                    ✓
+                  <span
+                    className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-rose-100 text-rose-600"
+                    aria-hidden="true"
+                  >
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="h-3 w-3"
+                    >
+                      <path d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.2 7.2a1 1 0 0 1-1.4 0L3.3 9.1a1 1 0 1 1 1.4-1.4l3.1 3.1 6.5-6.5a1 1 0 0 1 1.4 0z" />
+                    </svg>
                   </span>
-                  Comunicación directa y respuesta rápida por WhatsApp
+                  Comunicación directa y respuesta r?pida por WhatsApp
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-rose-600" aria-hidden="true">
-                    ✓
+                  <span
+                    className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-rose-100 text-rose-600"
+                    aria-hidden="true"
+                  >
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="h-3 w-3"
+                    >
+                      <path d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.2 7.2a1 1 0 0 1-1.4 0L3.3 9.1a1 1 0 1 1 1.4-1.4l3.1 3.1 6.5-6.5a1 1 0 0 1 1.4 0z" />
+                    </svg>
                   </span>
                   Espacio privado, cómodo y cuidadosamente mantenido
                 </li>
@@ -122,26 +167,126 @@ export default function LandingPage({ content }) {
           </h2>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
             {[
-              { icon: "👥", label: "Hasta 4 personas", value: "Hasta 4" },
-              { icon: "🛏️", label: "Recámaras", value: "2" },
-              { icon: "🚿", label: "Baños", value: "1" },
-              {
-                icon: "📶",
-                label: "Wi‑Fi de alta velocidad incluido",
-                value: "Incluido",
-              },
-              { icon: "🚗", label: "Consultar disponibilidad", value: "Consultar" },
-              { icon: "❄️", label: "Consultar disponibilidad", value: "Consultar" },
+              { label: "Capacidad", value: "Hasta 4 personas" },
+              { label: "Recámaras", value: "2" },
+              { label: "Baños", value: "1" },
+              { label: "Wi-Fi", value: "Alta velocidad incluido" },
+              { label: "Estacionamiento", value: "Consultar disponibilidad" },
+              { label: "Aire acondicionado", value: "Consultar" },
             ].map((item, index) => (
               <div
                 key={`${item.label}-${index}`}
-                className="rounded-2xl border border-neutral-200 bg-white p-4 text-center shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
+                className="group rounded-2xl border border-neutral-200 bg-white p-4 text-center shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-shadow duration-200 hover:shadow-md"
               >
-                <div className="text-lg">{item.icon}</div>
+                {[
+                  {
+                    icon: "M4 12a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v5H4zM8 8a2 2 0 1 0-4 0M16 8a2 2 0 1 0 4 0",
+                    color: "text-emerald-500",
+                  },
+                  {
+                    icon: "M4 12h16M6 12V9a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3M4 12v4M20 12v4",
+                    color: "text-rose-500",
+                  },
+                  {
+                    icon: "M4 12h16M6 12V7a2 2 0 1 1 4 0v5M8 16v2M12 16v2",
+                    color: "text-sky-500",
+                  },
+                  {
+                    icon: "M4.5 9.5a8 8 0 0 1 11 0M7 12a4.5 4.5 0 0 1 6 0M10 15h.01",
+                    color: "text-sky-500",
+                  },
+                  {
+                    icon: "M3 13h12l2-3h2a1 1 0 0 1 1 1v5H3v-3a1 1 0 0 1 1-1zm2 3a1.5 1.5 0 1 0 3 0m8 0a1.5 1.5 0 1 0 3 0",
+                    color: "text-amber-500",
+                  },
+                  {
+                    icon: "M12 4v16M8 8l4-4 4 4M8 16l4 4 4-4",
+                    color: "text-sky-500",
+                  },
+                ][index] && (
+                  <div className="flex justify-center">
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gray-50 ring-1 ring-gray-200 transition-transform duration-200 ease-out group-hover:scale-105">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className={`h-6 w-6 ${[
+                        "text-emerald-500",
+                        "text-rose-500",
+                        "text-sky-500",
+                        "text-sky-500",
+                        "text-amber-500",
+                        "text-sky-500",
+                      ][index]}`}
+                    >
+                      <path
+                        d={
+                          [
+                            "M4 12a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v5H4zM8 8a2 2 0 1 0-4 0M16 8a2 2 0 1 0 4 0",
+                            "M4 12h16M6 12V9a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3M4 12v4M20 12v4",
+                            "M4 12h16M6 12V7a2 2 0 1 1 4 0v5M8 16v2M12 16v2",
+                            "M4.5 9.5a8 8 0 0 1 11 0M7 12a4.5 4.5 0 0 1 6 0M10 15h.01",
+                            "M3 13h12l2-3h2a1 1 0 0 1 1 1v5H3v-3a1 1 0 0 1 1-1zm2 3a1.5 1.5 0 1 0 3 0m8 0a1.5 1.5 0 1 0 3 0",
+                            "M12 4v16M8 8l4-4 4 4M8 16l4 4 4-4",
+                          ][index]
+                        }
+                      />
+                    </svg>
+                    </span>
+                  </div>
+                )}
                 <p className="mt-2 text-xs font-semibold text-neutral-700">
                   {item.label}
                 </p>
                 <p className="mt-1 text-sm text-neutral-900">{item.value}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <GallerySection />
+
+        <section
+          aria-labelledby="property-title"
+          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+        >
+          <h2
+            id="property-title"
+            className="text-2xl font-semibold text-neutral-900 sm:text-3xl"
+          >
+            {content.property.title}
+          </h2>
+          <div className="grid grid-cols-2 gap-4 text-neutral-700 sm:grid-cols-3 lg:grid-cols-4">
+            {content.property.items.map((item, index) => (
+              <div
+                key={`${item}-${index}`}
+                className="group rounded-2xl border border-neutral-200 bg-white p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
+              >
+                <span
+                  className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-50 ring-1 ring-gray-200 transition-transform duration-200 ease-out group-hover:scale-105"
+                  aria-hidden="true"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className={`h-5 w-5 ${amenityIconColors[index % amenityIconColors.length]}`}
+                  >
+                    <path d={amenityIcons[index % amenityIcons.length]} />
+                  </svg>
+                </span>
+                <p className="mt-2 text-sm font-semibold text-neutral-900">
+                  Amenidad {index + 1}
+                </p>
+                <p className="mt-1 text-sm text-neutral-600">
+                  {item}
+                </p>
               </div>
             ))}
           </div>
@@ -169,30 +314,30 @@ export default function LandingPage({ content }) {
               </div>
               <p className="max-w-2xl text-base leading-7 text-neutral-700">
                 La propiedad se encuentra en Chapalita, una zona tranquila y bien
-                conectada de Guadalajara. Durante el Mundial 2026, esta ubicación
+                conectada de Guadalajara. Durante el Mundial 2026, esta ubicaci?n
                 permite desplazamientos eficientes hacia el estadio, Expo
                 Guadalajara y puntos clave de la ciudad, sin sacrificar comodidad
                 ni descanso.
               </p>
               <div className="flex flex-wrap gap-3 text-sm text-neutral-700">
                 <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
-                  🏟 Estadio Akron · ~25–40 min en auto
+                   Estadio Akron · ~25–40 min en auto
                 </span>
                 <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
-                  🏢 Expo Guadalajara · ~10–20 min en auto
+                   Expo Guadalajara · ~10–20 min en auto
                 </span>
                 <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
-                  🏙 Centro de Guadalajara · ~20–35 min en auto
+                   Centro de Guadalajara · ~20–35 min en auto
                 </span>
                 <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
-                  ✈️ Aeropuerto GDL · ~30–45 min en auto
+                   Aeropuerto GDL · ~30–45 min en auto
                 </span>
               </div>
               <p className="text-sm text-neutral-600">
                 Tiempos aproximados, sujetos a condiciones de tráfico y horario.
               </p>
               <p className="text-sm text-neutral-600">
-                La ubicación exacta se comparte únicamente al confirmar
+                La ubicaci?n exacta se comparte únicamente al confirmar
                 disponibilidad.
               </p>
             </div>
@@ -203,11 +348,11 @@ export default function LandingPage({ content }) {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 allowFullScreen
-                aria-label="Mapa de ubicación aproximada en Guadalajara"
+                aria-label="Mapa de ubicaci?n aproximada en Guadalajara"
               />
               <div className="mt-4 space-y-3 text-sm text-neutral-700">
                 <p className="font-semibold text-neutral-900">
-                  Classiqa Chapalita — Av. Nicolás Copérnico 943A, Atlas Chapalita,
+                  Classiqa Chapalita · Av. Nicolás Copérnico 943A, Atlas Chapalita,
                   45030 Zapopan, Jal.
                 </p>
                 <a
@@ -231,68 +376,34 @@ export default function LandingPage({ content }) {
             id="direct-trust-title"
             className="text-2xl font-semibold text-neutral-900 sm:text-3xl"
           >
-            ¿Por qué reservar directamente?
+            ¿¿Por qué reservar directamente?
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { icon: "🤝", text: "Comunicación directa, sin intermediarios" },
-              { icon: "📄", text: "Información clara antes de confirmar" },
-              { icon: "💬", text: "Respuesta rápida por WhatsApp" },
-              { icon: "🧾", text: "Condiciones transparentes y sencillas" },
-              { icon: "🕒", text: "Coordinación flexible de llegada y salida" },
+              { text: "Comunicación directa, sin intermediarios" },
+              { text: "Informaci?n clara antes de confirmar" },
+              { text: "Respuesta rápida por WhatsApp" },
+              { text: "Condiciones transparentes y sencillas" },
+              { text: "Coordinaci?n flexible de llegada y salida" },
             ].map((item) => (
               <div
                 key={item.text}
                 className="flex items-start gap-3 rounded-2xl bg-neutral-50 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
               >
-                <span className="text-lg" aria-label="Indicador de confianza">
-                  {item.icon}
+                <span
+                  className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-neutral-100 text-neutral-700"
+                  aria-hidden="true"
+                >
+                  <svg
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="h-3 w-3"
+                  >
+                    <path d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.2 7.2a1 1 0 0 1-1.4 0L3.3 9.1a1 1 0 1 1 1.4-1.4l3.1 3.1 6.5-6.5a1 1 0 0 1 1.4 0z" />
+                  </svg>
                 </span>
                 <p className="text-sm font-medium text-neutral-800">
                   {item.text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section
-          aria-labelledby="property-title"
-          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
-        >
-          <h2
-            id="property-title"
-            className="text-2xl font-semibold text-neutral-900 sm:text-3xl"
-          >
-            {content.property.title}
-          </h2>
-          <div className="grid grid-cols-2 gap-4 text-neutral-700 sm:grid-cols-3 lg:grid-cols-4">
-            {content.property.items.map((item, index) => (
-              <div
-                key={`${item}-${index}`}
-                className="rounded-2xl border border-neutral-200 bg-white p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
-              >
-                <div className="text-lg">
-                  {[
-                    "🛋️",
-                    "🛏️",
-                    "🍽️",
-                    "📶",
-                    "🧳",
-                    "🌤️",
-                    "🚿",
-                    "🔑",
-                    "🧼",
-                    "💻",
-                    "⚡",
-                    "🌙",
-                  ][index % 12]}
-                </div>
-                <p className="mt-2 text-sm font-semibold text-neutral-900">
-                  Amenidad {index + 1}
-                </p>
-                <p className="mt-1 text-sm text-neutral-600">
-                  {item}
                 </p>
               </div>
             ))}
@@ -315,37 +426,12 @@ export default function LandingPage({ content }) {
             ))}
           </ul>
         </section>
-
-        <GallerySection />
-
-        
-
-        <section
-          aria-labelledby="final-cta-title"
-          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
-        >
-          <h2
-            id="final-cta-title"
-            className="text-2xl font-semibold text-neutral-900 sm:text-3xl"
-          >
-            {content.finalCta.title}
-          </h2>
-          <a
-            className="inline-flex items-center justify-center rounded-full bg-rose-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-rose-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2"
-            href="https://wa.me/526691590498?text=Hola%2C%20me%20interesa%20el%20departamento%20para%20el%20Mundial%202026%20en%20Guadalajara.%20%C2%BFQu%C3%A9%20fechas%20tienes%20disponibles%20y%20cu%C3%A1l%20es%20el%20proceso%20de%20reserva%3F"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Contactar por WhatsApp
-          </a>
-        </section>
-
       </main>
 
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-neutral-200 bg-white/95 px-4 py-3 backdrop-blur sm:hidden">
         <a
           className="inline-flex w-full items-center justify-center rounded-full bg-rose-600 px-6 py-3 text-base font-semibold text-white hover:bg-rose-700"
-          href="https://wa.me/526691590498?text=Hola%2C%20vi%20el%20departamento%20en%20renta%20en%20Guadalajara%20para%20el%20Mundial%202026%20y%20me%20gustar%C3%ADa%20conocer%20disponibilidad%2C%20fechas%20y%20condiciones.%20Gracias."
+          href="https://wa.me/526691590498text=Hola%2C%20me%20interesa%20el%20departamento%20para%20el%20Mundial%202026%20en%20Guadalajara.%20%C2%BFQu%C3%A9%20fechas%20tienes%20disponibles%20y%20cu%C3%A1l%20es%20el%20proceso%20de%20reserva%3F"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -355,8 +441,9 @@ export default function LandingPage({ content }) {
 
       <footer className="mx-auto max-w-5xl px-6 py-10">
         <p className="text-sm text-neutral-600">
-          Renta directa en Guadalajara para el Mundial 2026. Atención
-          personalizada, comunicación clara y disponibilidad limitada.
+          Renta directa en Guadalajara para el Mundial 2026 con atención clara y
+          organizada. Compartimos información precisa y mantenemos comunicación
+          directa para una experiencia confiable.
         </p>
       </footer>
     </div>

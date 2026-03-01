@@ -4,20 +4,20 @@ export const landingContent = {
     hero: {
       title: "Departamento en renta en Guadalajara para el Mundial 2026",
       subtitle:
-        "Una estancia cómoda y bien ubicada para vivir el torneo con tranquilidad. Este departamento está pensado para viajeros que buscan privacidad, acceso eficiente y un punto de partida confiable en Guadalajara. Aquí encontrarás comunicación directa, condiciones claras y una experiencia enfocada en el Mundial 2026 sin complicaciones. El objetivo es que puedas concentrarte en el fútbol y en tu grupo con un espacio seguro, limpio y funcional. Si buscas un lugar que equilibre comodidad y logística, esta es una base sólida para el viaje.",
+        "Estancia privada y bien ubicada para vivir el torneo con tranquilidad. Este departamento está pensado para viajeros que buscan privacidad, acceso eficiente y un punto de partida confiable en Guadalajara. Aquí encontrarás comunicación directa y condiciones claras, con una experiencia enfocada en el Mundial 2026 sin complicaciones. El objetivo es que puedas concentrarte en el fútbol y en tu grupo con un espacio seguro, limpio y funcional.",
       cta: "Solicitar disponibilidad",
     },
     property: {
       title: "Información de la propiedad",
       items: [
-        "Distribución amplia y funcional.",
-        "Dormitorios cómodos con ropa de cama de calidad.",
-        "Cocina equipada para estancias cortas o medias.",
-        "Internet confiable para trabajo remoto.",
-        "Baño funcional con agua caliente.",
-        "Áreas comunes agradables y ventiladas.",
-        "Espacios de guardado para estancias prolongadas.",
-        "Ambiente tranquilo para un descanso adecuado.",
+        "Distribución amplia para moverse con comodidad en estancias de varios días.",
+        "Dormitorios silenciosos con descanso adecuado después de jornadas largas.",
+        "Cocina equipada para preparar comidas simples durante el torneo.",
+        "Internet confiable para trabajo remoto y coordinación diaria.",
+        "Baño funcional con agua caliente estable.",
+        "Áreas comunes ventiladas para convivir sin sentir el espacio cargado.",
+        "Espacios de guardado para mantener orden en estancias prolongadas.",
+        "Ambiente tranquilo para dormir bien y recuperarse entre partidos.",
       ],
     },
     location: {
@@ -33,24 +33,23 @@ export const landingContent = {
     nearby: {
       title: "Qué hacer cerca",
       items: [
-        "Restaurantes y mercados locales para explorar la cocina tapatía antes o después del partido.",
-        "Cafés y espacios tranquilos para trabajar, planear tu itinerario o hacer una pausa.",
-        "Áreas verdes y paseos urbanos para caminar y relajarte en días sin partido.",
-        "Museos y sitios culturales para complementar la experiencia del torneo.",
-        "Bares y puntos de reunión para convivir en un ambiente futbolero.",
-        "Centros comerciales y servicios prácticos para abastecerte con facilidad.",
-        "Recorridos gastronómicos y mercados locales para conocer sabores de Guadalajara.",
-        "Opciones para familias y actividades ligeras si viajas con niños o personas mayores.",
+        "Restaurantes y mercados locales para comer bien antes o después del partido.",
+        "Cafés y espacios tranquilos para trabajar, planear el día o hacer una pausa.",
+        "Áreas verdes y paseos urbanos para caminar y descansar en días sin partido.",
+        "Museos y espacios culturales para equilibrar el viaje con actividades locales.",
+        "Puntos de reunión para convivir en un ambiente relajado.",
+        "Centros comerciales y servicios prácticos para resolver compras básicas.",
+        "Recorridos gastronómicos y mercados locales con oferta variada.",
+        "Opciones familiares y actividades ligeras si viajas con niños o adultos mayores.",
       ],
     },
     gallery: {
       title: "Galería",
       body:
-        "Publicaremos fotos y videos reales del departamento, incluyendo áreas comunes, habitaciones y detalles de amenidades. El objetivo es que tengas claridad total antes de reservar y que la llegada sea exactamente como la esperas. Verás el estado real del mobiliario, la distribución y el tamaño de cada área. La galería se actualizará con información útil, sin filtros excesivos ni promesas irreales.",
+        "Publicaremos fotos y videos reales del departamento, incluyendo áreas comunes, habitaciones y detalles de amenidades. El objetivo es que tengas claridad total antes de reservar. Verás el estado real del mobiliario y la distribución de cada área. La galería se actualizará con información útil y sin filtros excesivos.",
     },
     finalCta: {
-      title:
-        "Asegura tu estancia para el Mundial 2026 con un proceso directo, transparente y sin intermediarios",
+      title: "Asegura tu estancia para el Mundial 2026 con atención directa",
       cta: "Contactar por WhatsApp",
     },
     footer:
