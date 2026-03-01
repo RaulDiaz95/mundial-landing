@@ -59,15 +59,17 @@ export default async function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div id="ambient-bg">
-          <div className="ambient-particles" />
+          <div className="ambient-layer layer-1"></div>
+          <div className="ambient-layer layer-2"></div>
+          <div className="ambient-layer layer-3"></div>
         </div>
         <div id="app-content">
-        <Script
-          id="lodgingbusiness-jsonld"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        {children}
+          <Script
+            id="lodgingbusiness-jsonld"
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+          {children}
         </div>
       </body>
     </html>
