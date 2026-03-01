@@ -31,7 +31,7 @@ export default function LandingPage({ content }) {
       <main className="mx-auto max-w-5xl px-6 py-10 space-y-10 sm:space-y-12">
         <section
           aria-labelledby="hero-title"
-          className="-mx-6 border-y border-neutral-200 bg-[radial-gradient(circle_at_top,_rgba(244,244,245,0.7),_rgba(255,255,255,1)_55%)] px-6 py-12 sm:mx-0 sm:rounded-2xl sm:border sm:px-10 sm:py-14"
+          className="-mx-6 border-y border-neutral-200 bg-[radial-gradient(circle_at_top,_rgba(244,244,245,0.7),_rgba(255,255,255,1)_55%)] px-6 py-12 sm:mx-0 sm:rounded-2xl sm:border sm:px-10 sm:py-14 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]"
         >
           <div className="mx-auto max-w-5xl gap-10 space-y-8 lg:grid lg:grid-cols-12 lg:items-start lg:space-y-0">
             <div className="order-1 space-y-6 lg:col-span-7 lg:order-1">
@@ -93,7 +93,7 @@ export default function LandingPage({ content }) {
 
             <div className="order-3 space-y-4 lg:col-span-7 lg:order-3">
               <a
-                className="inline-flex items-center justify-center rounded-full bg-rose-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-rose-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2"
+                className="inline-flex items-center justify-center rounded-full bg-rose-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition-transform duration-300 ease-out hover:-translate-y-0.5 hover:bg-rose-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2"
                 href="https://wa.me/526691590498text=Hola%2C%20me%20interesa%20el%20departamento%20para%20el%20Mundial%202026%20en%20Guadalajara.%20%C2%BFQu%C3%A9%20fechas%20tienes%20disponibles%20y%20cu%C3%A1l%20es%20el%20proceso%20de%20reserva%3F"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -171,14 +171,14 @@ export default function LandingPage({ content }) {
             {[
               { label: "Capacidad", value: "Hasta 4 personas" },
               { label: "Recámaras", value: "2" },
-              { label: "Baños", value: "1" },
-              { label: "Wi-Fi", value: "Alta velocidad incluido" },
-              { label: "Estacionamiento", value: "Techado (en batería, exclusivo del departamento)" },
+              { label: "Baños", value: "2" },
+              { label: "Aire acondicionado", value: "Incluido en áreas principales" },
+              { label: "Estacionamiento", value: "Techado y exclusivo" },
               { label: "Cocina", value: "Cocina integral totalmente equipada" },
             ].map((item, index) => (
               <div
                 key={`${item.label}-${index}`}
-                className="group rounded-2xl border border-neutral-200 bg-white p-4 text-center shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-shadow duration-200 hover:shadow-md"
+                className="group rounded-2xl border border-neutral-200 bg-white p-4 text-center shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:shadow-md motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]"
               >
                 {[
                   {
@@ -310,10 +310,10 @@ export default function LandingPage({ content }) {
 
               <div
                 key={`${item.description}-${index}`}
-                className="group rounded-2xl border border-neutral-200 bg-white p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
+                className="group rounded-2xl border border-neutral-200 bg-white p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]"
               >
                 <span
-                  className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-50 ring-1 ring-gray-200 transition-transform duration-200 ease-out group-hover:scale-105"
+                  className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-50 ring-1 ring-gray-200 transition-transform duration-300 ease-out group-hover:scale-105"
                   aria-hidden="true"
                 >
                   <svg
@@ -460,12 +460,48 @@ export default function LandingPage({ content }) {
             id="nearby-title"
             className="text-2xl font-semibold text-neutral-900 sm:text-3xl"
           >
-            {content.nearby.title}
+            Qué hacer cerca
           </h2>
-          <ul className="grid gap-3 text-neutral-700 sm:grid-cols-2 sm:gap-4">
-            {content.nearby.items.map((item, index) => (
-              <li key={`${item.description}-${index}`}>{item.description}</li>
-            ))}
+          <p className="text-sm text-neutral-600">
+            Opciones prácticas y agradables a pocos minutos del departamento durante tu estancia en Guadalajara.
+          </p>
+          <ul className="grid gap-4 text-neutral-700 sm:grid-cols-2">
+            <li className="rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
+              <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-100 text-neutral-700">
+                <span className="text-xs">•</span>
+              </span>
+              <p>Restaurantes y mercados locales para comer antes o después de los partidos</p>
+            </li>
+            <li className="rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
+              <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-100 text-neutral-700">
+                <span className="text-xs">•</span>
+              </span>
+              <p>Cafés tranquilos para trabajar, planear el día o descansar</p>
+            </li>
+            <li className="rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
+              <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-100 text-neutral-700">
+                <span className="text-xs">•</span>
+              </span>
+              <p>Áreas verdes y parques cercanos para caminar y despejarte</p>
+            </li>
+            <li className="rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
+              <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-100 text-neutral-700">
+                <span className="text-xs">•</span>
+              </span>
+              <p>Centros comerciales y servicios esenciales a corta distancia</p>
+            </li>
+            <li className="rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
+              <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-100 text-neutral-700">
+                <span className="text-xs">•</span>
+              </span>
+              <p>Opciones culturales y gastronómicas para conocer la ciudad</p>
+            </li>
+            <li className="rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
+              <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-100 text-neutral-700">
+                <span className="text-xs">•</span>
+              </span>
+              <p>Actividades ligeras y espacios familiares si viajas acompañado</p>
+            </li>
           </ul>
         </section>
       </main>

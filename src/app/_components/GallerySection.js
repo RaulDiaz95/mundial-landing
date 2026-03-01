@@ -105,12 +105,12 @@ export default function GallerySection() {
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {items.map((item) => (
         <figure key={item.src} className="group">
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl motion-safe:opacity-0 motion-safe:animate-[fadeIn_0.3s_ease-out_forwards]">
             <img
               src={item.src}
               alt={item.alt}
               loading="lazy"
-              className="h-full w-full cursor-pointer object-cover transition-transform duration-300 group-hover:scale-105"
+              className="h-full w-full cursor-pointer object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02]"
               onClick={() => {
                 const resolvedIndex = getIndexBySrc(fullItems, item.src);
                 openLightbox(fullItems, resolvedIndex);

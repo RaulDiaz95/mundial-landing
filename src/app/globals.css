@@ -24,3 +24,62 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer utilities {
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  [class*="animate-[fadeInUp_"] {
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  [class*="animate-[fadeIn_"] {
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .grid > * {
+    transition: transform 300ms ease-out;
+    will-change: transform, opacity;
+  }
+
+  .grid > *:hover {
+    transform: translateY(-2px);
+  }
+
+  .grid img {
+    transition: transform 300ms ease-out;
+    will-change: transform;
+  }
+
+  .animate-stagger > * {
+    animation-delay: calc(var(--stagger, 0) * 70ms);
+  }
+
+  .animate-stagger > *:nth-child(1) { --stagger: 0; }
+  .animate-stagger > *:nth-child(2) { --stagger: 1; }
+  .animate-stagger > *:nth-child(3) { --stagger: 2; }
+  .animate-stagger > *:nth-child(4) { --stagger: 3; }
+  .animate-stagger > *:nth-child(5) { --stagger: 4; }
+  .animate-stagger > *:nth-child(6) { --stagger: 5; }
+  .animate-stagger > *:nth-child(7) { --stagger: 6; }
+  .animate-stagger > *:nth-child(8) { --stagger: 7; }
+  .animate-stagger > *:nth-child(9) { --stagger: 8; }
+  .animate-stagger > *:nth-child(10) { --stagger: 9; }
+}
