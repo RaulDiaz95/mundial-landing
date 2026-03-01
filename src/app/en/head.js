@@ -1,9 +1,9 @@
-const jsonLd = {
+﻿const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LodgingBusiness",
-  name: "World Cup 2026 Guadalajara · Direct Rental",
+  name: "World Cup 2026 Guadalajara · Direct Booking",
   description:
-    "Rental property in Guadalajara for the World Cup 2026 with direct contact and a comfortable stay.",
+    "Apartment rental in Guadalajara for World Cup 2026 with direct contact and a comfortable stay.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Guadalajara",

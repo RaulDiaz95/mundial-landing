@@ -4,8 +4,7 @@ import { useEffect } from "react";
 import GallerySection from "./GallerySection";
 
 export default function LandingPage({ content }) {
-  const whatsappMessage =
-    "Hola 👋 me interesa recibir más información sobre el departamento en renta en Guadalajara para el Mundial 2026. ¿Podrías compartirme disponibilidad, ubicación y detalles generales? Gracias.";
+  const whatsappMessage = content.whatsapp.message;
   const whatsappLink = `https://wa.me/526691590498?text=${encodeURIComponent(
     whatsappMessage
   )}`;
@@ -107,31 +106,28 @@ export default function LandingPage({ content }) {
                   {content.hero.title}
                 </h1>
                 <p className="max-w-2xl text-base font-medium leading-7 text-neutral-700 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards] motion-safe:[animation-delay:240ms]">
-                  Estancia privada en una zona estratégica de Guadalajara, con
-                  atención directa y sin intermediarios para el Mundial 2026.
+                  {content.hero.lead}
                 </p>
                 <p className="max-w-2xl text-base leading-7 text-neutral-700">
-                  Pensado para viajeros que buscan comodidad, privacidad y
-                  traslados eficientes durante el torneo.
+                  {content.hero.sublead}
                 </p>
                 <details className="group max-w-2xl">
                   <summary className="cursor-pointer list-none text-sm text-neutral-500">
-                    Leer descripción completa
+                    {content.hero.detailsLabel}
                   </summary>
                   <p className="mt-3 text-base leading-7 text-neutral-700">
                     {content.hero.subtitle}
                   </p>
                 </details>
                 <div className="flex flex-wrap gap-2 text-xs text-neutral-700">
-                  <span className="rounded-full border border-neutral-200 bg-white/80 px-3 py-1">
-                    Guadalajara
-                  </span>
-                  <span className="rounded-full border border-neutral-200 bg-white/80 px-3 py-1">
-                    Renta directa
-                  </span>
-                  <span className="rounded-full border border-neutral-200 bg-white/80 px-3 py-1">
-                    Mundial 2026
-                  </span>
+                  {content.hero.badges.map((badge) => (
+                    <span
+                      key={badge}
+                      className="rounded-full border border-neutral-200 bg-white/80 px-3 py-1"
+                    >
+                      {badge}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -141,13 +137,13 @@ export default function LandingPage({ content }) {
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-neutral-200 shadow-[0_10px_24px_rgba(0,0,0,0.08)]">
                   <img
                     src="/images/apartment/hero-principal.jpg"
-                    alt="Vista principal del departamento"
+                    alt="Primary view of the apartment"
                     className="parallax h-full w-full object-cover"
                     loading="lazy"
                   />
                 </div>
                 <p className="text-xs text-neutral-600">
-                  Vista real del departamento
+                  Real view of the apartment
                 </p>
               </div>
             </div>
@@ -158,18 +154,17 @@ export default function LandingPage({ content }) {
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Contactar por WhatsApp sobre el departamento para el Mundial 2026"
+                aria-label={content.whatsapp.ariaLabel}
               >
-                Consultar disponibilidad
+                {content.hero.cta}
               </a>
-              <p className="text-sm text-neutral-500">
-                Respuesta rápida y contacto directo por WhatsApp
-              </p>
+              <p className="text-sm text-neutral-500">{content.hero.ctaNote}</p>
             </div>
 
             <div className="order-4 lg:col-span-7 lg:order-4">
               <ul className="space-y-2 text-sm text-neutral-700">
-                <li className="flex items-start gap-2">
+                {content.hero.bullets.map((bullet) => (
+                  <li key={bullet} className="flex items-start gap-2">
                   <span
                     className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-rose-100 text-rose-600"
                     aria-hidden="true"
@@ -182,38 +177,9 @@ export default function LandingPage({ content }) {
                       <path d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.2 7.2a1 1 0 0 1-1.4 0L3.3 9.1a1 1 0 1 1 1.4-1.4l3.1 3.1 6.5-6.5a1 1 0 0 1 1.4 0z" />
                     </svg>
                   </span>
-                  Zona estratégica con fácil acceso a estadio y Expo
-                </li>
-                <li className="flex items-start gap-2">
-                  <span
-                    className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-rose-100 text-rose-600"
-                    aria-hidden="true"
-                  >
-                    <svg
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      className="h-3 w-3"
-                    >
-                      <path d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.2 7.2a1 1 0 0 1-1.4 0L3.3 9.1a1 1 0 1 1 1.4-1.4l3.1 3.1 6.5-6.5a1 1 0 0 1 1.4 0z" />
-                    </svg>
-                  </span>
-                  Comunicación directa y respuesta rápida por WhatsApp
-                </li>
-                <li className="flex items-start gap-2">
-                  <span
-                    className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-rose-100 text-rose-600"
-                    aria-hidden="true"
-                  >
-                    <svg
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      className="h-3 w-3"
-                    >
-                      <path d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.2 7.2a1 1 0 0 1-1.4 0L3.3 9.1a1 1 0 1 1 1.4-1.4l3.1 3.1 6.5-6.5a1 1 0 0 1 1.4 0z" />
-                    </svg>
-                  </span>
-                  Espacio privado, cómodo y cuidadosamente mantenido
-                </li>
+                  {bullet}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -227,17 +193,10 @@ export default function LandingPage({ content }) {
             id="summary-title"
             className="text-2xl font-semibold text-neutral-900 sm:text-3xl"
           >
-            Resumen del departamento
+            {content.summary.title}
           </h2>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-            {[
-              { label: "Capacidad", value: "Hasta 4 personas" },
-              { label: "Recámaras", value: "2" },
-              { label: "Baños", value: "2" },
-              { label: "Aire acondicionado", value: "Incluido en áreas principales" },
-              { label: "Estacionamiento", value: "Techado y exclusivo" },
-              { label: "Cocina", value: "Cocina integral totalmente equipada" },
-            ].map((item, index) => (
+            {content.summary.items.map((item, index) => (
               <div
                 key={`${item.label}-${index}`}
                 className="reveal group rounded-2xl border border-neutral-200 bg-white/80 backdrop-blur-sm p-4 text-center shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:shadow-md motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]"
@@ -311,7 +270,7 @@ export default function LandingPage({ content }) {
           </div>
         </section>
 
-        <GallerySection className="reveal" />
+        <GallerySection className="reveal" content={content.gallery} />
 
         <section
           aria-labelledby="property-title"
@@ -321,54 +280,13 @@ export default function LandingPage({ content }) {
             id="property-title"
             className="text-2xl font-semibold text-neutral-900 sm:text-3xl"
           >
-            Características del departamento
+            {content.features.title}
           </h2>
           <p className="text-sm text-neutral-600">
-            Detalles reales pensados para una estancia cómoda durante el Mundial 2026.
+            {content.features.description}
           </p>
           <div className="grid grid-cols-2 gap-4 text-neutral-700 sm:grid-cols-3 lg:grid-cols-4">
-            {[
-              {
-                title: "Distribución cómoda",
-                description:
-                  "Departamento bien distribuido, ideal para estancias de varios días sin sensación de encierro.",
-              },
-              {
-                title: "Dos recámaras privadas",
-                description:
-                  "Espacios silenciosos y bien iluminados para descansar antes y después de los partidos.",
-              },
-              {
-                title: "Dos baños completos",
-                description:
-                  "Baños funcionales con agua caliente estable para mayor comodidad.",
-              },
-              {
-                title: "Cocina integral equipada",
-                description:
-                  "Cocina completa para preparar alimentos, desayunos o cenas durante tu estancia.",
-              },
-              {
-                title: "Wi-Fi de alta velocidad",
-                description:
-                  "Conexión confiable para trabajo remoto, streaming y comunicación diaria.",
-              },
-              {
-                title: "Estacionamiento techado",
-                description:
-                  "Cajón de estacionamiento en batería, exclusivo del departamento.",
-              },
-              {
-                title: "Ambiente tranquilo",
-                description:
-                  "Ideal para descansar, dormir bien y recuperarse entre jornadas del Mundial.",
-              },
-              {
-                title: "Espacios de guardado",
-                description:
-                  "Clósets y áreas de almacenamiento suficientes para estancias prolongadas.",
-              },
-            ].map((item, index) => (
+            {content.features.items.map((item, index) => (
               <div
                 key={`${item.description}-${index}`}
                 className="reveal group rounded-2xl border border-neutral-200 bg-white/80 backdrop-blur-sm p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]"
@@ -405,39 +323,33 @@ export default function LandingPage({ content }) {
           role="region"
           className="reveal space-y-6 rounded-2xl border border-neutral-200 bg-white/80 backdrop-blur-sm p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
-          <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
+          <div className="grid gap-6 lg:grid-cols-2 lg:items-start no-grid-hover">
             <div className="space-y-4">
               <div className="space-y-2">
                 <h2
                   id="stadium-location-title"
                   className="text-2xl font-semibold text-neutral-900 sm:text-3xl"
                 >
-                  Ubicación estratégica en Chapalita · Conectividad clave para el Mundial 2026
+                  {content.location.title}
                 </h2>
                 <p className="text-sm text-neutral-600">
-                  El departamento se encuentra en Chapalita, una de las zonas mejor ubicadas y más agradables de Guadalajara, ideal para quienes visitan la ciudad durante el Mundial 2026.
+                  {content.location.subtitle}
                 </p>
               </div>
               <p className="max-w-2xl text-base leading-7 text-neutral-700">
-                Su ubicación permite traslados eficientes hacia los principales puntos del evento, sin sacrificar tranquilidad ni comodidad.
+                {content.location.body}
               </p>
               <div className="flex flex-wrap gap-3 text-sm text-neutral-700">
-                <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
-                  Acceso rápido a Expo Guadalajara
-                </span>
-                <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
-                  Conectividad sencilla hacia el estadio y zonas sede
-                </span>
-                <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
-                  Zona residencial tranquila, lejos del ruido turístico
-                </span>
-                <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
-                  Cercanía a avenidas principales para moverte por la ciudad
-                </span>
+                {content.location.chips.map((chip) => (
+                  <span
+                    key={chip}
+                    className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2"
+                  >
+                    {chip}
+                  </span>
+                ))}
               </div>
-              <p className="text-sm text-neutral-600">
-                Servicios, restaurantes y comercios a pocos minutos
-              </p>
+              <p className="text-sm text-neutral-600">{content.location.note}</p>
               <p className="text-sm text-neutral-600"></p>
             </div>
             <div className="w-full">
@@ -447,12 +359,11 @@ export default function LandingPage({ content }) {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 allowFullScreen
-                aria-label="Mapa de ubicación aproximada en Guadalajara"
+                aria-label={content.location.mapAria}
               />
               <div className="mt-4 space-y-3 text-sm text-neutral-700">
                 <p className="font-semibold text-neutral-900">
-                  Classiqa Chapalita · Av. Nicolás Copérnico 943A, Atlas Chapalita,
-                  45030 Zapopan, Jal.
+                  {content.location.mapLabel}
                 </p>
                 <a
                   className="inline-flex items-center justify-center rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-700 shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
@@ -460,7 +371,7 @@ export default function LandingPage({ content }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Abrir en Google Maps
+                  {content.location.mapCta}
                 </a>
               </div>
             </div>
@@ -475,19 +386,12 @@ export default function LandingPage({ content }) {
             id="direct-trust-title"
             className="text-2xl font-semibold text-neutral-900 sm:text-3xl"
           >
-            ¿Por qué reservar directamente?
+            {content.directTrust.title}
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { text: "Comunicación directa, sin intermediarios" },
-              { text: "Sin comisiones ocultas" },
-              { text: "Información clara antes de confirmar" },
-              { text: "Respuesta rápida por WhatsApp" },
-              { text: "Flexibilidad en llegada y salida (según disponibilidad)" },
-              { text: "Condiciones transparentes y trato personal" },
-            ].map((item) => (
+            {content.directTrust.items.map((text) => (
               <div
-                key={item.text}
+                key={text}
                 className="reveal flex items-start gap-3 rounded-2xl bg-neutral-50 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
               >
                 <span
@@ -502,15 +406,11 @@ export default function LandingPage({ content }) {
                     <path d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.2 7.2a1 1 0 0 1-1.4 0L3.3 9.1a1 1 0 1 1 1.4-1.4l3.1 3.1 6.5-6.5a1 1 0 0 1 1.4 0z" />
                   </svg>
                 </span>
-                <p className="text-sm font-medium text-neutral-800">
-                  {item.text}
-                </p>
+                <p className="text-sm font-medium text-neutral-800">{text}</p>
               </div>
             ))}
           </div>
-          <p className="text-sm text-neutral-600">
-            Trato directo con el propietario para una experiencia clara, confiable y sin sorpresas durante el Mundial 2026.
-          </p>
+          <p className="text-sm text-neutral-600">{content.directTrust.note}</p>
         </section>
 
         <section
@@ -521,70 +421,41 @@ export default function LandingPage({ content }) {
             id="nearby-title"
             className="text-2xl font-semibold text-neutral-900 sm:text-3xl"
           >
-            Qué hacer cerca
+            {content.nearby.title}
           </h2>
-          <p className="text-sm text-neutral-600">
-            Opciones prácticas y agradables a pocos minutos del departamento durante tu estancia en Guadalajara.
-          </p>
+          <p className="text-sm text-neutral-600">{content.nearby.body}</p>
           <ul className="grid gap-4 text-neutral-700 sm:grid-cols-2">
-            <li className="reveal rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
-              <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-100 text-neutral-700">
-                <span className="text-xs">•</span>
-              </span>
-              <p>Restaurantes y mercados locales para comer antes o después de los partidos</p>
-            </li>
-            <li className="reveal rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
-              <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-100 text-neutral-700">
-                <span className="text-xs">•</span>
-              </span>
-              <p>Cafés tranquilos para trabajar, planear el día o descansar</p>
-            </li>
-            <li className="reveal rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
-              <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-100 text-neutral-700">
-                <span className="text-xs">•</span>
-              </span>
-              <p>Áreas verdes y parques cercanos para caminar y despejarte</p>
-            </li>
-            <li className="reveal rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
-              <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-100 text-neutral-700">
-                <span className="text-xs">•</span>
-              </span>
-              <p>Centros comerciales y servicios esenciales a corta distancia</p>
-            </li>
-            <li className="reveal rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
-              <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-100 text-neutral-700">
-                <span className="text-xs">•</span>
-              </span>
-              <p>Opciones culturales y gastronómicas para conocer la ciudad</p>
-            </li>
-            <li className="reveal rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
-              <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-100 text-neutral-700">
-                <span className="text-xs">•</span>
-              </span>
-              <p>Actividades ligeras y espacios familiares si viajas acompañado</p>
-            </li>
+            {content.nearby.items.map((item) => (
+              <li
+                key={item}
+                className="reveal rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]"
+              >
+                <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-100 text-neutral-700">
+                  <span className="text-xs">•</span>
+                </span>
+                <p>{item}</p>
+              </li>
+            ))}
           </ul>
         </section>
       </main>
 
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-neutral-200 bg-white/80 px-4 py-3 backdrop-blur-sm sm:hidden">
-        <a
-          className="inline-flex w-full items-center justify-center rounded-full bg-rose-600 px-6 py-3 text-base font-semibold text-white hover:bg-rose-700"
-          href={whatsappLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Contactar por WhatsApp sobre el departamento para el Mundial 2026"
-        >
-          {content.finalCta.cta}
-        </a>
-      </div>
+        <div className="fixed inset-x-0 bottom-0 z-50 border-t border-neutral-200 bg-white/80 px-4 py-3 backdrop-blur-sm sm:hidden">
+          <a
+            className="inline-flex w-full items-center justify-center rounded-full bg-rose-600 px-6 py-3 text-base font-semibold text-white hover:bg-rose-700"
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={content.whatsapp.ariaLabel}
+          >
+            {content.finalCta.cta}
+          </a>
+        </div>
 
       <footer className="mx-auto max-w-5xl lg:max-w-[1280px] px-6 py-10">
         <div className="rounded-2xl bg-neutral-50 px-6 py-6 text-center shadow-[0_1px_6px_rgba(0,0,0,0.04)]">
           <p className="mx-auto max-w-3xl text-sm leading-7 text-neutral-600">
-            Renta directa en Guadalajara para el Mundial 2026 con atención clara y
-            organizada. Compartimos información precisa y mantenemos comunicación
-            directa para una experiencia confiable.
+            {content.footer}
           </p>
         </div>
       </footer>

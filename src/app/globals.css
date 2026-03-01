@@ -89,6 +89,18 @@ body {
   }
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .no-grid-hover > * {
+    transition: none;
+  }
+
+  .no-grid-hover > *:hover {
+    transform: none;
+    box-shadow: none;
+    z-index: auto;
+  }
+}
+
   .grid img {
     transition: transform 300ms ease-out;
     will-change: transform;

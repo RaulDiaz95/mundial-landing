@@ -5,46 +5,149 @@
       title: "Departamento en renta en Guadalajara para el Mundial 2026",
       subtitle:
         "Estancia privada y bien ubicada para vivir el torneo con tranquilidad. Este departamento está pensado para viajeros que buscan privacidad, acceso eficiente y un punto de partida confiable en Guadalajara. Aquí encontrarás comunicación directa y condiciones claras, con una experiencia enfocada en el Mundial 2026 sin complicaciones. El objetivo es que puedas concentrarte en el fútbol y en tu grupo con un espacio seguro, limpio y funcional.",
-      cta: "Solicitar disponibilidad",
+      cta: "Consultar disponibilidad",
+      lead:
+        "Estancia privada en una zona estratégica de Guadalajara, con atención directa y sin intermediarios para el Mundial 2026.",
+      sublead:
+        "Pensado para viajeros que buscan comodidad, privacidad y traslados eficientes durante el torneo.",
+      detailsLabel: "Leer descripción completa",
+      badges: ["Guadalajara", "Renta directa", "Mundial 2026"],
+      ctaNote: "Respuesta rápida y contacto directo por WhatsApp",
+      bullets: [
+        "Zona estratégica con fácil acceso a estadio y Expo",
+        "Comunicación directa y respuesta rápida por WhatsApp",
+        "Espacio privado, cómodo y cuidadosamente mantenido",
+      ],
     },
-    property: {
-      title: "Información de la propiedad",
+    summary: {
+      title: "Resumen del departamento",
       items: [
-        "Distribución amplia para moverse con comodidad en estancias de varios días.",
-        "Dormitorios silenciosos con descanso adecuado después de jornadas largas.",
-        "Cocina equipada para preparar comidas simples durante el torneo.",
-        "Internet confiable para trabajo remoto y coordinación diaria.",
-        "Baño funcional con agua caliente estable.",
-        "Áreas comunes ventiladas para convivir sin sentir el espacio cargado.",
-        "Espacios de guardado para mantener orden en estancias prolongadas.",
-        "Ambiente tranquilo para dormir bien y recuperarse entre partidos.",
+        { label: "Capacidad", value: "Hasta 4 personas" },
+        { label: "Recámaras", value: "2" },
+        { label: "Baños", value: "2" },
+        { label: "Aire acondicionado", value: "Incluido en áreas principales" },
+        { label: "Estacionamiento", value: "Techado y exclusivo" },
+        { label: "Cocina", value: "Cocina integral totalmente equipada" },
+      ],
+    },
+    features: {
+      title: "Características del departamento",
+      description:
+        "Detalles reales pensados para una estancia cómoda durante el Mundial 2026.",
+      items: [
+        {
+          title: "Distribución cómoda",
+          description:
+            "Departamento bien distribuido, ideal para estancias de varios días sin sensación de encierro.",
+        },
+        {
+          title: "Dos recámaras privadas",
+          description:
+            "Espacios silenciosos y bien iluminados para descansar antes y después de los partidos.",
+        },
+        {
+          title: "Dos baños completos",
+          description:
+            "Baños funcionales con agua caliente estable para mayor comodidad.",
+        },
+        {
+          title: "Cocina integral equipada",
+          description:
+            "Cocina completa para preparar alimentos, desayunos o cenas durante tu estancia.",
+        },
+        {
+          title: "Wi-Fi de alta velocidad",
+          description:
+            "Conexión confiable para trabajo remoto, streaming y comunicación diaria.",
+        },
+        {
+          title: "Estacionamiento techado",
+          description:
+            "Cajón de estacionamiento en batería, exclusivo del departamento.",
+        },
+        {
+          title: "Ambiente tranquilo",
+          description:
+            "Ideal para descansar, dormir bien y recuperarse entre jornadas del Mundial.",
+        },
+        {
+          title: "Espacios de guardado",
+          description:
+            "Clósets y áreas de almacenamiento suficientes para estancias prolongadas.",
+        },
       ],
     },
     location: {
-      title: "Ubicación y cercanía al estadio",
+      title:
+        "Ubicación estratégica en Chapalita · Conectividad clave para el Mundial 2026",
+      subtitle:
+        "El departamento se encuentra en Chapalita, una de las zonas mejor ubicadas y más agradables de Guadalajara, ideal para quienes visitan la ciudad durante el Mundial 2026.",
       body:
-        "Guadalajara combina tradición, gastronomía e infraestructura que facilita los traslados en días de partido. El departamento está en una zona con acceso ágil a vías principales y transporte, para llegar al estadio y zonas de afición con tiempos razonables. La idea es simple: menos tiempo en traslados y más tiempo disfrutando el Mundial 2026. Además, la ubicación facilita la movilidad hacia restaurantes, cafés y servicios esenciales, con un enfoque práctico y seguro.",
+        "Su ubicación permite traslados eficientes hacia los principales puntos del evento, sin sacrificar tranquilidad ni comodidad.",
+      chips: [
+        "Acceso rápido a Expo Guadalajara",
+        "Conectividad sencilla hacia el estadio y zonas sede",
+        "Zona residencial tranquila, lejos del ruido turístico",
+        "Cercanía a avenidas principales para moverte por la ciudad",
+      ],
+      note: "Servicios, restaurantes y comercios a pocos minutos",
+      mapLabel:
+        "Classiqa Chapalita · Av. Nicolás Copérnico 943A, Atlas Chapalita, 45030 Zapopan, Jal.",
+      mapCta: "Abrir en Google Maps",
+      mapAria: "Mapa de ubicación aproximada en Guadalajara",
     },
-    map: {
-      title: "Mapa y referencia",
-      body:
-        "Aquí podrás ver un mapa con la ubicación aproximada y los accesos cercanos. La referencia ofrece contexto sin comprometer la privacidad del inmueble. Al solicitar disponibilidad, compartimos la ubicación exacta y sugerencias de rutas hacia el estadio. También orientamos sobre opciones de transporte y tiempos estimados en condiciones normales para planear con anticipación.",
+    directTrust: {
+      title: "¿Por qué reservar directamente?",
+      items: [
+        "Comunicación directa, sin intermediarios",
+        "Sin comisiones ocultas",
+        "Información clara antes de confirmar",
+        "Respuesta rápida por WhatsApp",
+        "Flexibilidad en llegada y salida (según disponibilidad)",
+        "Condiciones transparentes y trato personal",
+      ],
+      note:
+        "Trato directo con el propietario para una experiencia clara, confiable y sin sorpresas durante el Mundial 2026.",
     },
     nearby: {
       title: "Qué hacer cerca",
+      body:
+        "Opciones prácticas y agradables a pocos minutos del departamento durante tu estancia en Guadalajara.",
       items: [
         "Restaurantes y mercados locales para comer antes o después de los partidos",
-        "Cafés y espacios tranquilos para trabajar, planear el día o descansar",
-        "Áreas verdes y paseos urbanos para caminar y despejarte",
-        "Centros comerciales y servicios prácticos a corta distancia",
-        "Opciones familiares y actividades ligeras si viajas acompañado",
+        "Cafés tranquilos para trabajar, planear el día o descansar",
+        "Áreas verdes y parques cercanos para caminar y despejarte",
+        "Centros comerciales y servicios esenciales a corta distancia",
+        "Opciones culturales y gastronómicas para conocer la ciudad",
+        "Actividades ligeras y espacios familiares si viajas acompañado",
       ],
     },
-
-gallery: {
-      title: "Galería",
-      body:
-        "Publicaremos fotos y videos reales del departamento, incluyendo áreas comunes, habitaciones y detalles de amenidades. El objetivo es que tengas claridad total antes de reservar. Verás el estado real del mobiliario y la distribución de cada área. La galería se actualizará con información útil y sin filtros excesivos.",
+    gallery: {
+      departmentTitle: "Galería del departamento",
+      departmentBody:
+        "Imágenes reales del departamento y áreas comunes. Sin renders ni fotografías de referencia.",
+      amenitiesTitle: "Amenidades del edificio",
+      amenitiesBody:
+        "Espacios compartidos pensados para disfrutar, relajarte y complementar tu estancia durante el Mundial 2026.",
+      amenitiesList: [
+        "Alberca al aire libre — Ideal para relajarte después de los partidos o comenzar el día con un momento de descanso.",
+        "Zona de asadores — Espacio equipado para convivir y preparar comidas en un ambiente relajado.",
+        "Zona para fogata — Área común pensada para reuniones tranquilas por la tarde o noche.",
+        "Gimnasio equipado — Mantén tu rutina de ejercicio sin salir del edificio durante tu estancia.",
+        "Salón para adultos — Espacio cómodo para descansar, leer o convivir fuera del departamento.",
+        "Juegos infantiles — Área segura para niños, ideal si viajas en familia.",
+        "Estacionamiento techado — Cajón en batería, techado y exclusivo del departamento.",
+      ],
+      showMore: "Ver más fotos",
+      lightboxClose: "Cerrar",
+      lightboxPrev: "Anterior",
+      lightboxNext: "Siguiente",
+    },
+    whatsapp: {
+      message:
+        "Hola 👋 me interesa recibir más información sobre el departamento en renta en Guadalajara para el Mundial 2026. ¿Podrías compartirme disponibilidad, ubicación y detalles generales? Gracias.",
+      ariaLabel:
+        "Contactar por WhatsApp sobre el departamento para el Mundial 2026",
     },
     finalCta: {
       title: "Asegura tu estancia para el Mundial 2026 con atención directa",
@@ -54,56 +157,153 @@ gallery: {
       "Renta directa en Guadalajara para el Mundial 2026. Atención personalizada e información clara para una decisión informada. Si necesitas fechas, tarifas o condiciones, contáctanos y te responderemos con datos concretos.",
   },
   en: {
-    siteName: "World Cup 2026 Guadalajara · Direct Rental",
+    siteName: "World Cup 2026 Guadalajara · Direct Booking",
     hero: {
-      title: "Rental property in Guadalajara for the World Cup 2026",
+      title: "Guadalajara apartment rental for the World Cup 2026",
       subtitle:
-        "A comfortable, well‑located stay designed for international travelers coming to Guadalajara for the tournament. This property is built around what matters most during the World Cup: reliable logistics, quiet rest, and straightforward communication. You get a clear, premium experience without inflated promises and without intermediaries. If you want a rental property in Guadalajara for the World Cup 2026 that feels organized, safe, and easy to coordinate for a group or family, this is a focused option. We keep details transparent, timelines simple, and responses quick so you can plan your trip with confidence.",
+        "A private, well‑located stay designed for guests who want a calm base and reliable logistics during the tournament. This apartment is built for comfort, privacy, and easy access to key venues in Guadalajara. Expect direct communication, clear conditions, and a premium, no‑friction experience so you can focus on the matches and your group with confidence.",
       cta: "Check availability",
+      lead:
+        "A private stay in a strategic area of Guadalajara, with direct contact and no intermediaries for World Cup 2026.",
+      sublead:
+        "Designed for travelers who value comfort, privacy, and efficient transfers during the tournament.",
+      detailsLabel: "Read full description",
+      badges: ["Guadalajara", "Direct rental", "World Cup 2026"],
+      ctaNote: "Fast reply and direct WhatsApp contact",
+      bullets: [
+        "Strategic location with easy access to the stadium and Expo",
+        "Direct communication and quick WhatsApp responses",
+        "Private, comfortable, and carefully maintained space",
+      ],
     },
-    property: {
-      title: "Información de la propiedad",
+    summary: {
+      title: "Apartment summary",
       items: [
-        "Distribución amplia para viajes en grupo, con áreas compartidas que facilitan convivir sin perder privacidad.",
-        "Recámaras cómodas con ropa de cama de calidad y un ambiente tranquilo para descansar después de los partidos.",
-        "Cocina equipada para comidas rápidas, cenas tardías y horarios flexibles durante el torneo.",
-        "Internet confiable para trabajo, streaming y coordinación de planes con tu grupo.",
-        "Espacios de guardado y detalles prácticos que permiten estancias largas sin sentirte limitado.",
-        "Áreas sociales bien iluminadas y ventilación constante para un ambiente agradable.",
-        "Baño funcional con agua caliente estable y acabados simples y limpios.",
-        "Indicaciones claras de check‑in y reglas de la casa para una llegada ordenada.",
-        "Servicio de limpieza opcional bajo solicitud, para mantener el espacio en buen estado.",
-        "Superficie de trabajo estable para laptop y llamadas si combinas viaje y trabajo.",
-        "Noches tranquilas y temperatura confortable, especialmente útil tras partidos nocturnos.",
+        { label: "Capacity", value: "Up to 4 guests" },
+        { label: "Bedrooms", value: "2" },
+        { label: "Bathrooms", value: "2" },
+        { label: "Air conditioning", value: "Included in main areas" },
+        { label: "Parking", value: "Covered and private" },
+        { label: "Kitchen", value: "Fully equipped kitchen" },
+      ],
+    },
+    features: {
+      title: "Apartment features",
+      description:
+        "Real details designed for a comfortable stay during World Cup 2026.",
+      items: [
+        {
+          title: "Comfortable layout",
+          description:
+            "Well‑distributed spaces ideal for multi‑day stays without feeling cramped.",
+        },
+        {
+          title: "Two private bedrooms",
+          description:
+            "Quiet, well‑lit rooms for rest before and after matches.",
+        },
+        {
+          title: "Two full bathrooms",
+          description:
+            "Functional bathrooms with consistent hot water for comfort.",
+        },
+        {
+          title: "Fully equipped kitchen",
+          description:
+            "Complete kitchen for meals, quick breakfasts, or late dinners.",
+        },
+        {
+          title: "High‑speed Wi‑Fi",
+          description:
+            "Reliable connection for remote work, streaming, and daily coordination.",
+        },
+        {
+          title: "Covered parking",
+          description: "Private covered parking space included.",
+        },
+        {
+          title: "Calm environment",
+          description:
+            "Ideal for quality sleep and recovery between match days.",
+        },
+        {
+          title: "Storage space",
+          description:
+            "Closets and storage areas for longer stays and organized packing.",
+        },
       ],
     },
     location: {
-      title: "Location and stadium proximity",
+      title:
+        "Strategic Chapalita location · Key connectivity for World Cup 2026",
+      subtitle:
+        "The apartment is in Chapalita, one of Guadalajara’s most pleasant and well‑connected areas, ideal for World Cup visitors.",
       body:
-        "Guadalajara offers a strong blend of culture, food, and infrastructure, which becomes even more important during major events. The property sits in an area with efficient access to main roads and practical transport connections, helping you reach the stadium and fan zones with reasonable travel times. The goal is simple: spend less time in transit and more time enjoying the World Cup 2026. The neighborhood also makes it easy to reach restaurants, cafés, and everyday services without long detours. When the city is at full capacity, predictability matters; that is why the location is chosen to balance access with comfort, so your stay feels manageable even on busy days. This is a good base for visitors who want to enjoy match day energy while still having a quiet place to reset at night.",
+        "Its location enables efficient transfers to key venues without sacrificing comfort or quiet.",
+      chips: [
+        "Quick access to Expo Guadalajara",
+        "Easy connectivity to the stadium and host zones",
+        "Calm residential area away from tourist noise",
+        "Close to main avenues for easy city travel",
+      ],
+      note: "Restaurants, cafés, and essential services just minutes away",
+      mapLabel:
+        "Classiqa Chapalita · Av. Nicolás Copérnico 943A, Atlas Chapalita, 45030 Zapopan, Jal.",
+      mapCta: "Open in Google Maps",
+      mapAria: "Approximate location map in Guadalajara",
     },
-    map: {
-      title: "Map and reference",
-      body:
-        "A reference map will show the approximate location and nearby access points. It is designed to give you context while keeping the exact address private until you request availability. When you reach out, we can share the precise location, suggested routes to the stadium, and practical timing guidance so you can plan your days with clarity. If you prefer to use a car or public transportation, we will provide simple route notes to help reduce uncertainty on match days.",
+    directTrust: {
+      title: "Why book directly?",
+      items: [
+        "Direct communication, no intermediaries",
+        "No hidden fees",
+        "Clear information before confirming",
+        "Fast WhatsApp response",
+        "Flexible arrival and departure (subject to availability)",
+        "Transparent terms and personal service",
+      ],
+      note:
+        "Direct contact with the owner for a clear, reliable, no‑surprises experience during World Cup 2026.",
     },
     nearby: {
-      title: "Things to do nearby",
+      title: "What to do nearby",
+      body:
+        "Practical, enjoyable options just minutes from the apartment during your stay in Guadalajara.",
       items: [
-        "Local restaurants and markets to experience Guadalajara’s food scene between matches.",
-        "Cafés and quiet spots for remote work, planning your itinerary, or taking a break.",
-        "Urban walks and green areas for light activity on non‑match days.",
-        "Museums and cultural venues to balance football with local history.",
-        "Bars and social hubs to enjoy the World Cup atmosphere with other fans.",
-        "Shopping centers and practical services for supplies and everyday needs.",
-        "Food tours and neighborhood markets that highlight local flavors.",
-        "Family‑friendly options for travelers with kids or older relatives.",
+        "Local restaurants and markets before or after matches",
+        "Quiet cafés for work, planning, or a break",
+        "Nearby parks and green areas for a walk",
+        "Shopping centers and essential services close by",
+        "Cultural and food experiences to explore the city",
+        "Light activities and family‑friendly spots if traveling together",
       ],
     },
     gallery: {
-      title: "Gallery",
-      body:
-        "We will publish real photos and videos of the property, including common areas, bedrooms, and amenity details. The goal is total clarity before you book. You will see the actual layout, the size of each area, and a realistic view of the interior so there are no surprises at arrival. We will also include helpful context shots when available, so you understand how the space works for groups, downtime, and daily routines. The gallery will focus on accurate representation rather than stylized images, keeping expectations aligned with reality.",
+      departmentTitle: "Apartment gallery",
+      departmentBody:
+        "Real images of the apartment and common areas. No renders or stock photos.",
+      amenitiesTitle: "Building amenities",
+      amenitiesBody:
+        "Shared spaces designed to relax, unwind, and complement your stay during World Cup 2026.",
+      amenitiesList: [
+        "Outdoor pool — Ideal for relaxing after matches or starting the day calmly.",
+        "Grill area — Equipped space to gather and prepare meals in a relaxed setting.",
+        "Fire pit area — A shared space for quiet evening gatherings.",
+        "Fully equipped gym — Keep your routine without leaving the building.",
+        "Adults’ lounge — Comfortable space to read, rest, or socialize.",
+        "Children’s play area — Safe space if you’re traveling with family.",
+        "Covered parking — Private covered parking space for the apartment.",
+      ],
+      showMore: "View more photos",
+      lightboxClose: "Close",
+      lightboxPrev: "Previous",
+      lightboxNext: "Next",
+    },
+    whatsapp: {
+      message:
+        "Hi 👋 I’m interested in more information about the apartment rental in Guadalajara for World Cup 2026. Could you share availability, location, and general details? Thank you.",
+      ariaLabel:
+        "Contact via WhatsApp about the World Cup 2026 apartment rental",
     },
     finalCta: {
       title:
@@ -111,7 +311,7 @@ gallery: {
       cta: "Contact via WhatsApp",
     },
     footer:
-      "Direct rental in Guadalajara for the World Cup 2026. Clear information, responsive communication, and limited availability during key dates. Reach out for rates, dates, and practical details.",
+      "Direct rental in Guadalajara for World Cup 2026. Clear information, responsive communication, and limited availability during key dates. Reach out for rates, dates, and practical details.",
   },
 };
 

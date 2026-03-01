@@ -27,9 +27,9 @@ export default async function RootLayout({ children }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
-    name: "Departamento en renta en Guadalajara para el Mundial 2026",
+    name: "Guadalajara apartment rental for World Cup 2026",
     description:
-      "A comfortable rental property in Guadalajara designed for World Cup 2026 visitors seeking a calm, well-located stay with direct communication.",
+      "A comfortable apartment rental in Guadalajara designed for World Cup 2026 visitors seeking a calm, well-located stay with direct communication.",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Guadalajara",
