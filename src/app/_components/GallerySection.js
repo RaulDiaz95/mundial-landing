@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 export default function GallerySection() {
   const apartmentImages = [
@@ -56,10 +56,11 @@ export default function GallerySection() {
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [lightboxImages, setLightboxImages] = useState([]);
   const [touchStartX, setTouchStartX] = useState(null);
+  const closeButtonRef = useRef(null);
 
   const openLightbox = (images, index) => {
     setLightboxImages(images);
-    setLightboxIndex(index);
+    setLightboxIndex(Math.max(0, Math.min(index, images.length - 1)));
     setLightboxOpen(true);
   };
 
@@ -68,25 +69,41 @@ export default function GallerySection() {
   };
 
   const showNext = () => {
-    setLightboxIndex((prev) => (prev + 1) % lightboxImages.length);
+    setLightboxIndex((prev) =>
+      lightboxImages.length === 0 ? 0 : (prev + 1) % lightboxImages.length
+    );
   };
 
   const showPrev = () => {
     setLightboxIndex((prev) =>
-      prev === 0 ? lightboxImages.length - 1 : prev - 1
+      lightboxImages.length === 0
+        ? 0
+        : prev === 0
+          ? lightboxImages.length - 1
+          : prev - 1
     );
   };
 
   useEffect(() => {
     if (!lightboxOpen) return;
     const onKeyDown = (event) => {
-      if (event.key === "Escape") closeLightbox();
-      if (event.key === "ArrowRight") showNext();
-      if (event.key === "ArrowLeft") showPrev();
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeLightbox();
+      }
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        showNext();
+      }
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        showPrev();
+      }
     };
     window.addEventListener("keydown", onKeyDown);
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    closeButtonRef.current?.focus();
     return () => {
       window.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = originalOverflow;
@@ -201,7 +218,7 @@ export default function GallerySection() {
 
       {lightboxOpen && currentImage ? (
         <div
-          className="fixed inset-0 z-50 flex h-screen w-screen items-center justify-center bg-black/80 p-4"
+          className="fixed inset-0 z-50 flex h-screen w-screen items-center justify-center bg-black/80 p-4 pointer-events-auto"
           role="dialog"
           aria-modal="true"
           onClick={closeLightbox}
@@ -220,9 +237,13 @@ export default function GallerySection() {
           >
             <button
               type="button"
-              onClick={closeLightbox}
-              className="absolute right-3 top-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-sm"
+              onClick={(event) => {
+                event.stopPropagation();
+                closeLightbox();
+              }}
+              className="absolute right-3 top-3 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-sm pointer-events-auto"
               aria-label="Cerrar"
+              ref={closeButtonRef}
             >
               <svg
                 viewBox="0 0 24 24"
@@ -240,8 +261,11 @@ export default function GallerySection() {
               <>
                 <button
                   type="button"
-                  onClick={showPrev}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-sm"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    showPrev();
+                  }}
+                  className="absolute left-3 top-1/2 z-10 -translate-y-1/2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-sm pointer-events-auto"
                   aria-label="Anterior"
                 >
                   <svg
@@ -258,8 +282,11 @@ export default function GallerySection() {
                 </button>
                 <button
                   type="button"
-                  onClick={showNext}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-sm"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    showNext();
+                  }}
+                  className="absolute right-3 top-1/2 z-10 -translate-y-1/2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-sm pointer-events-auto"
                   aria-label="Siguiente"
                 >
                   <svg
@@ -279,7 +306,7 @@ export default function GallerySection() {
             <img
               src={currentImage.src}
               alt={currentImage.alt}
-              className="max-h-[90vh] w-full rounded-xl object-contain"
+              className="relative z-0 max-h-[90vh] w-full rounded-xl object-contain"
             />
           </div>
         </div>
