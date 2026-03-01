@@ -22,7 +22,7 @@ export default function AmbientParticles() {
             value: 60,
             density: { enable: true, area: 900 },
           },
-          color: { value: "#5f00b8" },
+          color: { value: "#0b07ff" },
           shape: { type: "circle" },
           opacity: {
             value: { min: 0.18, max: 0.35 },

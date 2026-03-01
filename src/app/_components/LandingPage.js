@@ -4,6 +4,11 @@ import { useEffect } from "react";
 import GallerySection from "./GallerySection";
 
 export default function LandingPage({ content }) {
+  const whatsappMessage =
+    "Hola 👋 me interesa recibir más información sobre el departamento en renta en Guadalajara para el Mundial 2026. ¿Podrías compartirme disponibilidad, ubicación y detalles generales? Gracias.";
+  const whatsappLink = `https://wa.me/526691590498?text=${encodeURIComponent(
+    whatsappMessage
+  )}`;
   const amenityIcons = [
     "M3 11.25 12 4l9 7.25M5.25 10.75V20a1 1 0 0 0 1 1h11.5a1 1 0 0 0 1-1v-9.25",
     "M4.5 12.75h15M6 12.75V10.5a2.25 2.25 0 0 1 2.25-2.25h4.5A2.25 2.25 0 0 1 15 10.5v2.25M4.5 12.75V18M19.5 12.75V18",
@@ -152,9 +157,10 @@ export default function LandingPage({ content }) {
             <div className="order-3 space-y-4 lg:col-span-7 lg:order-3">
               <a
                 className="inline-flex items-center justify-center rounded-full bg-rose-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition-transform duration-300 ease-out hover:-translate-y-0.5 hover:bg-rose-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards] motion-safe:[animation-delay:360ms]"
-                href="https://wa.me/526691590498text=Hola%2C%20me%20interesa%20el%20departamento%20para%20el%20Mundial%202026%20en%20Guadalajara.%20%C2%BFQu%C3%A9%20fechas%20tienes%20disponibles%20y%20cu%C3%A1l%20es%20el%20proceso%20de%20reserva%3F"
+                href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Contactar por WhatsApp sobre el departamento para el Mundial 2026"
               >
                 Consultar disponibilidad
               </a>
@@ -566,9 +572,10 @@ export default function LandingPage({ content }) {
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-neutral-200 bg-white/80 px-4 py-3 backdrop-blur-sm sm:hidden">
         <a
           className="inline-flex w-full items-center justify-center rounded-full bg-rose-600 px-6 py-3 text-base font-semibold text-white hover:bg-rose-700"
-          href="https://wa.me/526691590498text=Hola%2C%20me%20interesa%20el%20departamento%20para%20el%20Mundial%202026%20en%20Guadalajara.%20%C2%BFQu%C3%A9%20fechas%20tienes%20disponibles%20y%20cu%C3%A1l%20es%20el%20proceso%20de%20reserva%3F"
+          href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Contactar por WhatsApp sobre el departamento para el Mundial 2026"
         >
           {content.finalCta.cta}
         </a>
