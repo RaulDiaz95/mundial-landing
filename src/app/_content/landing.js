@@ -1,4 +1,4 @@
-export const landingContent = {
+﻿export const landingContent = {
   es: {
     siteName: "Mundial 2026 Guadalajara · Renta Directa",
     hero: {
@@ -33,17 +33,15 @@ export const landingContent = {
     nearby: {
       title: "Qué hacer cerca",
       items: [
-        "Restaurantes y mercados locales para comer bien antes o después del partido.",
-        "Cafés y espacios tranquilos para trabajar, planear el día o hacer una pausa.",
-        "Áreas verdes y paseos urbanos para caminar y descansar en días sin partido.",
-        "Museos y espacios culturales para equilibrar el viaje con actividades locales.",
-        "Puntos de reunión para convivir en un ambiente relajado.",
-        "Centros comerciales y servicios prácticos para resolver compras básicas.",
-        "Recorridos gastronómicos y mercados locales con oferta variada.",
-        "Opciones familiares y actividades ligeras si viajas con niños o adultos mayores.",
+        "Restaurantes y mercados locales para comer antes o después de los partidos",
+        "Cafés y espacios tranquilos para trabajar, planear el día o descansar",
+        "Áreas verdes y paseos urbanos para caminar y despejarte",
+        "Centros comerciales y servicios prácticos a corta distancia",
+        "Opciones familiares y actividades ligeras si viajas acompañado",
       ],
     },
-    gallery: {
+
+gallery: {
       title: "Galería",
       body:
         "Publicaremos fotos y videos reales del departamento, incluyendo áreas comunes, habitaciones y detalles de amenidades. El objetivo es que tengas claridad total antes de reservar. Verás el estado real del mobiliario y la distribución de cada área. La galería se actualizará con información útil y sin filtros excesivos.",
@@ -116,3 +114,4 @@ export const landingContent = {
       "Direct rental in Guadalajara for the World Cup 2026. Clear information, responsive communication, and limited availability during key dates. Reach out for rates, dates, and practical details.",
   },
 };
+

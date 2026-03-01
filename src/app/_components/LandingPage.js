@@ -1,25 +1,25 @@
-import GallerySection from "./GallerySection";
+﻿import GallerySection from "./GallerySection";
 
 export default function LandingPage({ content }) {
   const amenityIcons = [
     "M3 11.25 12 4l9 7.25M5.25 10.75V20a1 1 0 0 0 1 1h11.5a1 1 0 0 0 1-1v-9.25",
     "M4.5 12.75h15M6 12.75V10.5a2.25 2.25 0 0 1 2.25-2.25h4.5A2.25 2.25 0 0 1 15 10.5v2.25M4.5 12.75V18M19.5 12.75V18",
+    "M4.5 13.5h15M6 13.5V8.25a2.25 2.25 0 1 1 4.5 0V13.5M9 17.25v2.25M15 17.25v2.25",
     "M7.5 3.75h9v16.5h-9zM10.5 7.5h3M10.5 11.25h3",
     "M5.25 10.5a9.75 9.75 0 0 1 13.5 0M8.25 13.5a6 6 0 0 1 7.5 0M12 16.5h.01",
-    "M4.5 13.5h15M6 13.5V8.25a2.25 2.25 0 1 1 4.5 0V13.5M9 17.25v2.25M15 17.25v2.25",
-    "M6.75 4.5h10.5v15h-10.5zM9 4.5V3h6v1.5M11.25 12h1.5",
-    "M4.5 12h15v4.5h-15zM6.75 12V9a2.25 2.25 0 0 1 2.25-2.25h6A2.25 2.25 0 0 1 17.25 9v3",
+    "M3.75 13.5h12l2-3h2.25a1.5 1.5 0 0 1 1.5 1.5v4.5H3.75V13.5zM6.75 18a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm10.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z",
     "M6.75 15.75c5.25-1.5 8.25-4.5 9.75-9.75-5.25 1.5-8.25 4.5-9.75 9.75zM6.75 15.75 12.75 21.75",
+    "M6.75 4.5h10.5v15h-10.5zM9 4.5V3h6v1.5M11.25 12h1.5",
   ];
   const amenityIconColors = [
-    "text-rose-500",
     "text-emerald-500",
+    "text-rose-500",
+    "text-sky-500",
     "text-amber-500",
     "text-sky-500",
+    "text-amber-500",
     "text-emerald-500",
     "text-amber-500",
-    "text-rose-500",
-    "text-emerald-500",
   ];
 
   return (
@@ -77,11 +77,13 @@ export default function LandingPage({ content }) {
 
             <div className="order-2 lg:col-span-5 lg:order-2">
               <div className="space-y-3">
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-neutral-200 bg-gradient-to-br from-neutral-100 via-white to-neutral-50 shadow-[0_10px_24px_rgba(0,0,0,0.08)]">
-                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/20 via-transparent to-transparent" />
-                  <div className="absolute right-4 top-4 rounded-full border border-rose-100 bg-rose-50 px-3 py-1 text-xs font-semibold text-rose-700">
-                    Disponible · Fechas limitadas
-                  </div>
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-neutral-200 shadow-[0_10px_24px_rgba(0,0,0,0.08)]">
+                  <img
+                    src="/images/apartment/hero-principal.jpg"
+                    alt="Vista principal del departamento"
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
                 <p className="text-xs text-neutral-600">
                   Vista real del departamento
@@ -118,7 +120,7 @@ export default function LandingPage({ content }) {
                       <path d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.2 7.2a1 1 0 0 1-1.4 0L3.3 9.1a1 1 0 1 1 1.4-1.4l3.1 3.1 6.5-6.5a1 1 0 0 1 1.4 0z" />
                     </svg>
                   </span>
-                  Zona estratégica con f?cil acceso a estadio y Expo
+                  Zona estratégica con fácil acceso a estadio y Expo
                 </li>
                 <li className="flex items-start gap-2">
                   <span
@@ -133,7 +135,7 @@ export default function LandingPage({ content }) {
                       <path d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.2 7.2a1 1 0 0 1-1.4 0L3.3 9.1a1 1 0 1 1 1.4-1.4l3.1 3.1 6.5-6.5a1 1 0 0 1 1.4 0z" />
                     </svg>
                   </span>
-                  Comunicación directa y respuesta r?pida por WhatsApp
+                  Comunicación directa y respuesta rápida por WhatsApp
                 </li>
                 <li className="flex items-start gap-2">
                   <span
@@ -171,8 +173,8 @@ export default function LandingPage({ content }) {
               { label: "Recámaras", value: "2" },
               { label: "Baños", value: "1" },
               { label: "Wi-Fi", value: "Alta velocidad incluido" },
-              { label: "Estacionamiento", value: "Consultar disponibilidad" },
-              { label: "Aire acondicionado", value: "Consultar" },
+              { label: "Estacionamiento", value: "Techado (en batería, exclusivo del departamento)" },
+              { label: "Cocina", value: "Cocina integral totalmente equipada" },
             ].map((item, index) => (
               <div
                 key={`${item.label}-${index}`}
@@ -257,12 +259,57 @@ export default function LandingPage({ content }) {
             id="property-title"
             className="text-2xl font-semibold text-neutral-900 sm:text-3xl"
           >
-            {content.property.title}
+            Características del departamento
           </h2>
+          <p className="text-sm text-neutral-600">
+            Detalles reales pensados para una estancia cómoda durante el Mundial 2026.
+          </p>
           <div className="grid grid-cols-2 gap-4 text-neutral-700 sm:grid-cols-3 lg:grid-cols-4">
-            {content.property.items.map((item, index) => (
+            {[
+              {
+                title: "Distribución cómoda",
+                description:
+                  "Departamento bien distribuido, ideal para estancias de varios días sin sensación de encierro.",
+              },
+              {
+                title: "Dos recámaras privadas",
+                description:
+                  "Espacios silenciosos y bien iluminados para descansar antes y después de los partidos.",
+              },
+              {
+                title: "Dos baños completos",
+                description:
+                  "Baños funcionales con agua caliente estable para mayor comodidad.",
+              },
+              {
+                title: "Cocina integral equipada",
+                description:
+                  "Cocina completa para preparar alimentos, desayunos o cenas durante tu estancia.",
+              },
+              {
+                title: "Wi-Fi de alta velocidad",
+                description:
+                  "Conexión confiable para trabajo remoto, streaming y comunicación diaria.",
+              },
+              {
+                title: "Estacionamiento techado",
+                description:
+                  "Cajón de estacionamiento en batería, exclusivo del departamento.",
+              },
+              {
+                title: "Ambiente tranquilo",
+                description:
+                  "Ideal para descansar, dormir bien y recuperarse entre jornadas del Mundial.",
+              },
+              {
+                title: "Espacios de guardado",
+                description:
+                  "Clósets y áreas de almacenamiento suficientes para estancias prolongadas.",
+              },
+            ].map((item, index) => (
+
               <div
-                key={`${item}-${index}`}
+                key={`${item.description}-${index}`}
                 className="group rounded-2xl border border-neutral-200 bg-white p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
               >
                 <span
@@ -282,10 +329,10 @@ export default function LandingPage({ content }) {
                   </svg>
                 </span>
                 <p className="mt-2 text-sm font-semibold text-neutral-900">
-                  Amenidad {index + 1}
+                  {item.title}
                 </p>
                 <p className="mt-1 text-sm text-neutral-600">
-                  {item}
+                  {item.description}
                 </p>
               </div>
             ))}
@@ -304,42 +351,33 @@ export default function LandingPage({ content }) {
                   id="stadium-location-title"
                   className="text-2xl font-semibold text-neutral-900 sm:text-3xl"
                 >
-                  Ubicación estratégica en Chapalita · Conectividad clave para el
-                  Mundial 2026
+                  Ubicación estratégica en Chapalita · Conectividad clave para el Mundial 2026
                 </h2>
                 <p className="text-sm text-neutral-600">
-                  Zona tranquila, bien conectada y con acceso eficiente a estadio,
-                  Expo y zonas clave de la ciudad.
+                  El departamento se encuentra en Chapalita, una de las zonas mejor ubicadas y más agradables de Guadalajara, ideal para quienes visitan la ciudad durante el Mundial 2026.
                 </p>
               </div>
               <p className="max-w-2xl text-base leading-7 text-neutral-700">
-                La propiedad se encuentra en Chapalita, una zona tranquila y bien
-                conectada de Guadalajara. Durante el Mundial 2026, esta ubicaci?n
-                permite desplazamientos eficientes hacia el estadio, Expo
-                Guadalajara y puntos clave de la ciudad, sin sacrificar comodidad
-                ni descanso.
+                Su ubicación permite traslados eficientes hacia los principales puntos del evento, sin sacrificar tranquilidad ni comodidad.
               </p>
               <div className="flex flex-wrap gap-3 text-sm text-neutral-700">
                 <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
-                   Estadio Akron · ~25–40 min en auto
+                  Acceso rápido a Expo Guadalajara
                 </span>
                 <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
-                   Expo Guadalajara · ~10–20 min en auto
+                  Conectividad sencilla hacia el estadio y zonas sede
                 </span>
                 <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
-                   Centro de Guadalajara · ~20–35 min en auto
+                  Zona residencial tranquila, lejos del ruido turístico
                 </span>
                 <span className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2">
-                   Aeropuerto GDL · ~30–45 min en auto
+                  Cercanía a avenidas principales para moverte por la ciudad
                 </span>
               </div>
               <p className="text-sm text-neutral-600">
-                Tiempos aproximados, sujetos a condiciones de tráfico y horario.
+                Servicios, restaurantes y comercios a pocos minutos
               </p>
-              <p className="text-sm text-neutral-600">
-                La ubicaci?n exacta se comparte únicamente al confirmar
-                disponibilidad.
-              </p>
+              <p className="text-sm text-neutral-600"></p>
             </div>
             <div className="w-full">
               <iframe
@@ -348,7 +386,7 @@ export default function LandingPage({ content }) {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 allowFullScreen
-                aria-label="Mapa de ubicaci?n aproximada en Guadalajara"
+                aria-label="Mapa de ubicación aproximada en Guadalajara"
               />
               <div className="mt-4 space-y-3 text-sm text-neutral-700">
                 <p className="font-semibold text-neutral-900">
@@ -376,15 +414,16 @@ export default function LandingPage({ content }) {
             id="direct-trust-title"
             className="text-2xl font-semibold text-neutral-900 sm:text-3xl"
           >
-            ¿¿Por qué reservar directamente?
+            ¿Por qué reservar directamente?
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { text: "Comunicación directa, sin intermediarios" },
-              { text: "Informaci?n clara antes de confirmar" },
+              { text: "Sin comisiones ocultas" },
+              { text: "Información clara antes de confirmar" },
               { text: "Respuesta rápida por WhatsApp" },
-              { text: "Condiciones transparentes y sencillas" },
-              { text: "Coordinaci?n flexible de llegada y salida" },
+              { text: "Flexibilidad en llegada y salida (según disponibilidad)" },
+              { text: "Condiciones transparentes y trato personal" },
             ].map((item) => (
               <div
                 key={item.text}
@@ -408,6 +447,9 @@ export default function LandingPage({ content }) {
               </div>
             ))}
           </div>
+          <p className="text-sm text-neutral-600">
+            Trato directo con el propietario para una experiencia clara, confiable y sin sorpresas durante el Mundial 2026.
+          </p>
         </section>
 
         <section
@@ -422,7 +464,7 @@ export default function LandingPage({ content }) {
           </h2>
           <ul className="grid gap-3 text-neutral-700 sm:grid-cols-2 sm:gap-4">
             {content.nearby.items.map((item, index) => (
-              <li key={`${item}-${index}`}>{item}</li>
+              <li key={`${item.description}-${index}`}>{item.description}</li>
             ))}
           </ul>
         </section>

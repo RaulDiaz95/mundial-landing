@@ -12,37 +12,37 @@ export default function GallerySection() {
     { src: "/images/apartment/comedor-2.jpg", alt: "Comedor en otra vista" },
     { src: "/images/apartment/cocina.jpg", alt: "Cocina del departamento" },
     { src: "/images/apartment/refrigerador.jpg", alt: "Refrigerador en la cocina" },
-    { src: "/images/apartment/lavaplatos.jpg", alt: "?rea de lavaplatos" },
-    { src: "/images/apartment/recamara-principal.jpg", alt: "Rec?mara principal" },
+    { src: "/images/apartment/lavaplatos.jpg", alt: "Área de lavaplatos" },
+    { src: "/images/apartment/recamara-principal.jpg", alt: "Recámara principal" },
     { src: "/images/apartment/vista-sala.jpg", alt: "Vista de la sala" },
-    { src: "/images/apartment/vista-balcon.jpg", alt: "Vista desde el balc?n" },
-    { src: "/images/apartment/vista-balcon-nocturna.jpg", alt: "Vista nocturna desde el balc?n" },
-    { src: "/images/apartment/recamara-2.jpg", alt: "Segunda rec?mara" },
-    { src: "/images/apartment/camas-recamara-2.jpg", alt: "Camas en la segunda rec?mara" },
-    { src: "/images/apartment/escritorio-recamara-2.jpg", alt: "Escritorio en la segunda rec?mara" },
-    { src: "/images/apartment/bano-2.jpg", alt: "Ba?o del departamento" },
-    { src: "/images/apartment/lavamanos-ba?o-1.jpg", alt: "Lavamanos del ba?o principal" },
-    { src: "/images/apartment/lavamanos-ba?o-2.jpg", alt: "Lavamanos del segundo ba?o" },
-    { src: "/images/apartment/regadera-bano-2.jpg", alt: "Regadera del segundo ba?o" },
-    { src: "/images/apartment/closet-ba?o-1.jpg", alt: "Cl?set del ba?o principal" },
+    { src: "/images/apartment/vista-balcon.jpg", alt: "Vista desde el balcón" },
+    { src: "/images/apartment/vista-balcon-nocturna.jpg", alt: "Vista nocturna desde el balcón" },
+    { src: "/images/apartment/recamara-2.jpg", alt: "Segunda recámara" },
+    { src: "/images/apartment/camas-recamara-2.jpg", alt: "Camas en la segunda recámara" },
+    { src: "/images/apartment/escritorio-recamara-2.jpg", alt: "Escritorio en la segunda recámara" },
+    { src: "/images/apartment/bano-2.jpg", alt: "Baño del departamento" },
+    { src: "/images/apartment/lavamanos-bano-1.jpg", alt: "Lavamanos del baño principal" },
+    { src: "/images/apartment/lavamanos-bano-2.jpg", alt: "Lavamanos del segundo baño" },
+    { src: "/images/apartment/regadera-bano-2.jpg", alt: "Regadera del segundo baño" },
+    { src: "/images/apartment/closet-bano-1.jpg", alt: "Clóset del baño principal" },
     { src: "/images/apartment/cuarto-de-servicio.jpg", alt: "Cuarto de servicio" },
     { src: "/images/apartment/lavadora.jpg", alt: "Lavadora" },
     { src: "/images/apartment/vista-nocturna.jpg", alt: "Vista nocturna" },
     { src: "/images/apartment/vista-ingreso.jpg", alt: "Vista del ingreso" },
-    { src: "/images/apartment/vista-recamara-2.jpeg", alt: "Vista de la segunda rec?mara" },
+    { src: "/images/apartment/vista-recamara-2.jpeg", alt: "Vista de la segunda recámara" },
   ];
 
   const amenitiesImages = [
     { src: "/images/amenities/lobby-1.jpg", alt: "Lobby del edificio" },
-    { src: "/images/amenities/lobby-2.jpg", alt: "Lobby con ?rea de acceso" },
+    { src: "/images/amenities/lobby-2.jpg", alt: "Lobby con área de acceso" },
     { src: "/images/amenities/alberca-1.jpg", alt: "Alberca del edificio" },
     { src: "/images/amenities/alberca-2.jpg", alt: "Alberca en otra vista" },
-    { src: "/images/amenities/sitio-descanso-1.jpg", alt: "?rea de descanso" },
+    { src: "/images/amenities/sitio-descanso-1.jpg", alt: "Área de descanso" },
     { src: "/images/amenities/sitio-descanso-2.jpg", alt: "Zona de descanso" },
     { src: "/images/amenities/sala-estar-1.jpg", alt: "Sala de estar del edificio" },
     { src: "/images/amenities/sala-estar-2.jpg", alt: "Sala de estar en otra vista" },
     { src: "/images/amenities/mesas-aire-libre-1.jpg", alt: "Mesas al aire libre" },
-    { src: "/images/amenities/mesas-aire-libre-2.jpg", alt: "?rea de mesas al aire libre" },
+    { src: "/images/amenities/mesas-aire-libre-2.jpg", alt: "Área de mesas al aire libre" },
   ];
 
   const initialApartment = apartmentImages.slice(0, 9);
@@ -85,7 +85,12 @@ export default function GallerySection() {
       if (event.key === "ArrowLeft") showPrev();
     };
     window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = originalOverflow;
+    };
   }, [lightboxOpen, lightboxImages.length]);
 
   const currentImage = useMemo(
@@ -93,20 +98,23 @@ export default function GallerySection() {
     [lightboxImages, lightboxIndex]
   );
 
-  const renderGrid = (items, startIndex = 0) => (
+  const getIndexBySrc = (items, src) =>
+    items.findIndex((item) => item.src === src);
+
+  const renderGrid = (items, fullItems) => (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {items.map((item, index) => (
-        <figure
-          key={item.src}
-          className="group overflow-hidden rounded-xl bg-neutral-100 shadow-[0_2px_10px_rgba(0,0,0,0.06)]"
-        >
-          <div className="relative aspect-[4/3] w-full">
+      {items.map((item) => (
+        <figure key={item.src} className="group">
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
             <img
               src={item.src}
               alt={item.alt}
               loading="lazy"
-              className="h-full w-full cursor-pointer object-contain transition-transform duration-300 group-hover:scale-105"
-              onClick={() => openLightbox(items, startIndex + index)}
+              className="h-full w-full cursor-pointer object-cover transition-transform duration-300 group-hover:scale-105"
+              onClick={() => {
+                const resolvedIndex = getIndexBySrc(fullItems, item.src);
+                openLightbox(fullItems, resolvedIndex);
+              }}
             />
           </div>
         </figure>
@@ -125,14 +133,14 @@ export default function GallerySection() {
             id="gallery-department-title"
             className="text-2xl font-semibold text-neutral-900 sm:text-3xl"
           >
-            Galer?a del departamento
+            Galería del departamento
           </h2>
           <p className="max-w-2xl text-base leading-7 text-neutral-700">
-            Im?genes reales del departamento y ?reas comunes. Sin renders ni fotograf?as de referencia.
+            Imágenes reales del departamento y áreas comunes. Sin renders ni fotografías de referencia.
           </p>
         </div>
 
-        {renderGrid(initialApartment, 0)}
+        {renderGrid(initialApartment, apartmentImages)}
 
         {!expandedApartment ? (
           <div>
@@ -141,11 +149,11 @@ export default function GallerySection() {
               onClick={() => setExpandedApartment(true)}
               className="inline-flex items-center justify-center rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-700 shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
             >
-              Ver m?s fotos
+              Ver más fotos
             </button>
           </div>
         ) : remainingApartment.length > 0 ? (
-          renderGrid(remainingApartment, initialApartment.length)
+          renderGrid(remainingApartment, apartmentImages)
         ) : null}
       </section>
 
@@ -160,9 +168,21 @@ export default function GallerySection() {
           >
             Amenidades del edificio
           </h3>
+          <p className="max-w-2xl text-base leading-7 text-neutral-700">
+            Espacios compartidos pensados para disfrutar, relajarte y complementar tu estancia durante el Mundial 2026.
+          </p>
+          <ul className="grid gap-2 text-sm text-neutral-700 sm:grid-cols-2">
+            <li>Alberca al aire libre — Ideal para relajarte después de los partidos o comenzar el día con un momento de descanso.</li>
+            <li>Zona de asadores — Espacio equipado para convivir y preparar comidas en un ambiente relajado.</li>
+            <li>Zona para fogata — Área común pensada para reuniones tranquilas por la tarde o noche.</li>
+            <li>Gimnasio equipado — Mantén tu rutina de ejercicio sin salir del edificio durante tu estancia.</li>
+            <li>Salón para adultos — Espacio cómodo para descansar, leer o convivir fuera del departamento.</li>
+            <li>Juegos infantiles — Área segura para niños, ideal si viajas en familia.</li>
+            <li>Estacionamiento techado — Cajón en batería, techado y exclusivo del departamento.</li>
+          </ul>
         </div>
 
-        {renderGrid(initialAmenities, 0)}
+        {renderGrid(initialAmenities, amenitiesImages)}
 
         {!expandedAmenities ? (
           <div>
@@ -171,17 +191,17 @@ export default function GallerySection() {
               onClick={() => setExpandedAmenities(true)}
               className="inline-flex items-center justify-center rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-700 shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
             >
-              Ver m?s fotos
+              Ver más fotos
             </button>
           </div>
         ) : remainingAmenities.length > 0 ? (
-          renderGrid(remainingAmenities, initialAmenities.length)
+          renderGrid(remainingAmenities, amenitiesImages)
         ) : null}
       </section>
 
       {lightboxOpen && currentImage ? (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+          className="fixed inset-0 z-50 flex h-screen w-screen items-center justify-center bg-black/80 p-4"
           role="dialog"
           aria-modal="true"
           onClick={closeLightbox}
