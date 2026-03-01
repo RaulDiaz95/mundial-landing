@@ -83,15 +83,15 @@ export default function LandingPage({ content }) {
   }, []);
 
   return (
-    <div className="min-h-screen bg-neutral-100 overflow-x-hidden">
-      <header className="mx-auto max-w-5xl px-6 py-8 sm:py-10" />
+    <div className="min-h-screen overflow-x-hidden">
+      <header className="mx-auto max-w-5xl lg:max-w-[1280px] px-6 py-4 sm:py-6" />
 
-      <main className="mx-auto max-w-5xl px-6 py-10 space-y-10 sm:space-y-12">
+      <main className="mx-auto max-w-5xl lg:max-w-[1280px] px-6 py-6 space-y-10 sm:space-y-12">
         <section
           aria-labelledby="hero-title"
           className="-mx-6 border-y border-neutral-200 bg-[radial-gradient(circle_at_top,_rgba(244,244,245,0.7),_rgba(255,255,255,1)_55%)] px-6 py-12 sm:mx-0 sm:rounded-2xl sm:border sm:px-10 sm:py-14 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]"
         >
-          <div className="mx-auto max-w-5xl gap-10 space-y-8 lg:grid lg:grid-cols-12 lg:items-start lg:space-y-0">
+          <div className="mx-auto max-w-5xl lg:max-w-[1280px] gap-10 space-y-8 lg:grid lg:grid-cols-12 lg:items-start lg:space-y-0">
             <div className="order-1 space-y-6 lg:col-span-7 lg:order-1">
               <div className="space-y-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-600 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.45s_cubic-bezier(0.16,1,0.3,1)_forwards] motion-safe:[animation-delay:0ms]">
@@ -217,7 +217,7 @@ export default function LandingPage({ content }) {
 
         <section
           aria-labelledby="summary-title"
-          className="reveal space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+          className="reveal space-y-4 rounded-2xl border border-neutral-200 bg-white/95 p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <h2
             id="summary-title"
@@ -311,7 +311,7 @@ export default function LandingPage({ content }) {
 
         <section
           aria-labelledby="property-title"
-          className="reveal space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+          className="reveal space-y-4 rounded-2xl border border-neutral-200 bg-white/95 p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <h2
             id="property-title"
@@ -399,7 +399,7 @@ export default function LandingPage({ content }) {
         <section
           aria-labelledby="stadium-location-title"
           role="region"
-          className="reveal space-y-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+          className="reveal space-y-6 rounded-2xl border border-neutral-200 bg-white/95 p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
             <div className="space-y-4">
@@ -465,7 +465,7 @@ export default function LandingPage({ content }) {
 
         <section
           aria-labelledby="direct-trust-title"
-          className="reveal space-y-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+          className="reveal space-y-6 rounded-2xl border border-neutral-200 bg-white/95 p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <h2
             id="direct-trust-title"
@@ -511,7 +511,7 @@ export default function LandingPage({ content }) {
 
         <section
           aria-labelledby="nearby-title"
-          className="reveal space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+          className="reveal space-y-4 rounded-2xl border border-neutral-200 bg-white/95 p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <h2
             id="nearby-title"
@@ -574,7 +574,7 @@ export default function LandingPage({ content }) {
         </a>
       </div>
 
-      <footer className="mx-auto max-w-5xl px-6 py-10">
+      <footer className="mx-auto max-w-5xl lg:max-w-[1280px] px-6 py-10">
         <div className="rounded-2xl bg-neutral-50 px-6 py-6 text-center shadow-[0_1px_6px_rgba(0,0,0,0.04)]">
           <p className="mx-auto max-w-3xl text-sm leading-7 text-neutral-600">
             Renta directa en Guadalajara para el Mundial 2026 con atención clara y

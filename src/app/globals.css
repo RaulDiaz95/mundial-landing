@@ -20,9 +20,44 @@
 }
 
 body {
-  background: var(--background);
+  background: #ffffff;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -10% -10% -10% -10%;
+  z-index: -1;
+  pointer-events: none;
+  background-color: #ffffff;
+  background-image:
+    radial-gradient(1200px 600px at 20% 15%, rgba(0, 0, 0, 0.12), transparent 60%),
+    radial-gradient(900px 520px at 80% 20%, rgba(0, 0, 0, 0.1), transparent 62%),
+    radial-gradient(1100px 700px at 30% 85%, rgba(0, 0, 0, 0.11), transparent 60%),
+    radial-gradient(800px 500px at 85% 75%, rgba(0, 0, 0, 0.09), transparent 58%);
+  filter: blur(6px);
+  opacity: 0.15;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  animation: premiumFloat 34s ease-in-out infinite;
+}
+
+@keyframes premiumFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.14;
+  }
+  50% {
+    transform: translate3d(-24px, 32px, 0) scale(1.02);
+    opacity: 0.17;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.15;
+  }
 }
 
 @layer utilities {
@@ -105,6 +140,13 @@ body {
     opacity: 1 !important;
     transform: none !important;
     animation: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+    transform: none;
   }
 }
 

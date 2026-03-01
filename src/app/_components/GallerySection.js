@@ -126,7 +126,7 @@ export default function GallerySection() {
     <>
       <section
         aria-labelledby="gallery-department-title"
-        className="reveal space-y-6 rounded-2xl bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+        className="reveal space-y-6 rounded-2xl bg-white/95 p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
       >
         <div className="space-y-3">
           <h2
@@ -159,7 +159,7 @@ export default function GallerySection() {
 
       <section
         aria-labelledby="gallery-amenities-title"
-        className="reveal space-y-6 rounded-2xl bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+        className="reveal space-y-6 rounded-2xl bg-white/95 p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
       >
         <div className="space-y-3">
           <h3
@@ -207,7 +207,7 @@ export default function GallerySection() {
           onClick={closeLightbox}
         >
           <div
-            className="relative max-h-[90vh] w-full max-w-5xl"
+            className="relative max-h-[90vh] w-full max-w-5xl lg:max-w-[1280px]"
             onClick={(event) => event.stopPropagation()}
             onTouchStart={(event) => setTouchStartX(event.touches[0].clientX)}
             onTouchEnd={(event) => {
