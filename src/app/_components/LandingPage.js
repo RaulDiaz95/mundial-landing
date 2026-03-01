@@ -321,29 +321,29 @@ export default function LandingPage({ content }) {
         <section
           aria-labelledby="stadium-location-title"
           role="region"
-          className="reveal space-y-6 rounded-2xl border border-neutral-200 bg-white/80 backdrop-blur-sm p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+          className="reveal space-y-8 rounded-2xl border border-neutral-200 bg-white/80 backdrop-blur-sm p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
-          <div className="grid gap-6 lg:grid-cols-2 lg:items-start no-grid-hover">
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-start no-grid-hover">
             <div className="space-y-4">
               <div className="space-y-2">
                 <h2
                   id="stadium-location-title"
-                  className="text-2xl font-semibold text-neutral-900 sm:text-3xl"
+                  className="text-2xl font-semibold text-neutral-900 sm:text-3xl tracking-tight"
                 >
                   {content.location.title}
                 </h2>
-                <p className="text-sm text-neutral-600">
+                <p className="text-sm leading-6 text-neutral-600">
                   {content.location.subtitle}
                 </p>
               </div>
               <p className="max-w-2xl text-base leading-7 text-neutral-700">
                 {content.location.body}
               </p>
-              <div className="flex flex-wrap gap-3 text-sm text-neutral-700">
+              <div className="flex flex-wrap gap-2 text-sm text-neutral-700">
                 {content.location.chips.map((chip) => (
                   <span
                     key={chip}
-                    className="rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2"
+                    className="rounded-full bg-white/70 px-4 py-2 text-sm text-neutral-700 shadow-[0_1px_6px_rgba(0,0,0,0.06)]"
                   >
                     {chip}
                   </span>

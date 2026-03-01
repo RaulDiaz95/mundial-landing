@@ -182,14 +182,20 @@ export default function GallerySection({ content }) {
           <p className="max-w-2xl text-base leading-7 text-neutral-700">
             {content.amenitiesBody}
           </p>
-          <ul className="grid gap-2 text-sm text-neutral-700 sm:grid-cols-2 no-grid-hover">
-            <li>{content.amenitiesList[0]}</li>
-            <li>{content.amenitiesList[1]}</li>
-            <li>{content.amenitiesList[2]}</li>
-            <li>{content.amenitiesList[3]}</li>
-            <li>{content.amenitiesList[4]}</li>
-            <li>{content.amenitiesList[5]}</li>
-            <li>{content.amenitiesList[6]}</li>
+          <ul className="grid gap-4 text-sm text-neutral-700 sm:grid-cols-2 no-grid-hover">
+            {content.amenitiesList.map((item) => {
+              const [label, description] = item.split(" — ");
+              return (
+                <li key={item} className="max-w-md leading-6">
+                  <span className="block text-sm font-semibold text-neutral-900">
+                    {label}
+                  </span>
+                  <span className="mt-1 block text-sm text-neutral-600">
+                    {description || item}
+                  </span>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
