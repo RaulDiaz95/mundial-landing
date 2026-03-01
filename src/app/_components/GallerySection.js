@@ -101,16 +101,16 @@ export default function GallerySection() {
   const getIndexBySrc = (items, src) =>
     items.findIndex((item) => item.src === src);
 
-  const renderGrid = (items, fullItems) => (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+  const renderGrid = (items, fullItems, enableReveal = false) => (
+    <div className={`grid gap-4 sm:grid-cols-2 lg:grid-cols-3${enableReveal ? " reveal-stagger" : ""}`}>
       {items.map((item) => (
-        <figure key={item.src} className="group">
+        <figure key={item.src} className={`group${enableReveal ? " reveal" : ""}`}>
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl motion-safe:opacity-0 motion-safe:animate-[fadeIn_0.3s_ease-out_forwards]">
             <img
               src={item.src}
               alt={item.alt}
               loading="lazy"
-              className="h-full w-full cursor-pointer object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02]"
+              className="parallax h-full w-full cursor-pointer object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02]"
               onClick={() => {
                 const resolvedIndex = getIndexBySrc(fullItems, item.src);
                 openLightbox(fullItems, resolvedIndex);
@@ -126,7 +126,7 @@ export default function GallerySection() {
     <>
       <section
         aria-labelledby="gallery-department-title"
-        className="space-y-6 rounded-2xl bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+        className="reveal space-y-6 rounded-2xl bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
       >
         <div className="space-y-3">
           <h2
@@ -140,7 +140,7 @@ export default function GallerySection() {
           </p>
         </div>
 
-        {renderGrid(initialApartment, apartmentImages)}
+        {renderGrid(initialApartment, apartmentImages, true)}
 
         {!expandedApartment ? (
           <div>
@@ -153,13 +153,13 @@ export default function GallerySection() {
             </button>
           </div>
         ) : remainingApartment.length > 0 ? (
-          renderGrid(remainingApartment, apartmentImages)
+          renderGrid(remainingApartment, apartmentImages, true)
         ) : null}
       </section>
 
       <section
         aria-labelledby="gallery-amenities-title"
-        className="space-y-6 rounded-2xl bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+        className="reveal space-y-6 rounded-2xl bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
       >
         <div className="space-y-3">
           <h3
@@ -182,7 +182,7 @@ export default function GallerySection() {
           </ul>
         </div>
 
-        {renderGrid(initialAmenities, amenitiesImages)}
+        {renderGrid(initialAmenities, amenitiesImages, true)}
 
         {!expandedAmenities ? (
           <div>
@@ -195,7 +195,7 @@ export default function GallerySection() {
             </button>
           </div>
         ) : remainingAmenities.length > 0 ? (
-          renderGrid(remainingAmenities, amenitiesImages)
+          renderGrid(remainingAmenities, amenitiesImages, true)
         ) : null}
       </section>
 

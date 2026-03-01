@@ -1,4 +1,7 @@
-﻿import GallerySection from "./GallerySection";
+﻿"use client";
+
+import { useEffect } from "react";
+import GallerySection from "./GallerySection";
 
 export default function LandingPage({ content }) {
   const amenityIcons = [
@@ -22,11 +25,66 @@ export default function LandingPage({ content }) {
     "text-amber-500",
   ];
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (media.matches) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    const observeNew = () => {
+      document.querySelectorAll(".reveal").forEach((el) => {
+        if (el.classList.contains("is-visible")) return;
+        observer.observe(el);
+      });
+    };
+
+    observeNew();
+
+    const mutationObserver = new MutationObserver(() => {
+      observeNew();
+    });
+
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    const parallaxElements = document.querySelectorAll(".parallax");
+    const updateParallax = () => {
+      parallaxElements.forEach((el) => {
+        const rectTop = el.getBoundingClientRect().top;
+        const rawOffset = (rectTop - window.innerHeight) * -0.05;
+        const offset = Math.max(-8, Math.min(8, rawOffset));
+        el.style.setProperty("--parallax-offset", `${offset}px`);
+      });
+    };
+
+    updateParallax();
+    window.addEventListener("scroll", updateParallax, { passive: true });
+    window.addEventListener("resize", updateParallax);
+
+    return () => {
+      observer.disconnect();
+      mutationObserver.disconnect();
+      window.removeEventListener("scroll", updateParallax);
+      window.removeEventListener("resize", updateParallax);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-neutral-100 overflow-x-hidden">
-      <header className="mx-auto max-w-5xl px-6 py-8 sm:py-10">
-        <p className="text-sm text-neutral-600">{content.siteName}</p>
-      </header>
+      <header className="mx-auto max-w-5xl px-6 py-8 sm:py-10" />
 
       <main className="mx-auto max-w-5xl px-6 py-10 space-y-10 sm:space-y-12">
         <section
@@ -36,16 +94,16 @@ export default function LandingPage({ content }) {
           <div className="mx-auto max-w-5xl gap-10 space-y-8 lg:grid lg:grid-cols-12 lg:items-start lg:space-y-0">
             <div className="order-1 space-y-6 lg:col-span-7 lg:order-1">
               <div className="space-y-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-600">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-600 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.45s_cubic-bezier(0.16,1,0.3,1)_forwards] motion-safe:[animation-delay:0ms]">
                   WORLD CUP 2026 · GUADALAJARA
                 </p>
                 <h1
                   id="hero-title"
-                  className="max-w-2xl text-4xl font-semibold leading-tight text-neutral-900 sm:text-5xl"
+                  className="max-w-2xl text-4xl font-semibold leading-tight text-neutral-900 sm:text-5xl motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards] motion-safe:[animation-delay:120ms]"
                 >
                   {content.hero.title}
                 </h1>
-                <p className="max-w-2xl text-base font-medium leading-7 text-neutral-700">
+                <p className="max-w-2xl text-base font-medium leading-7 text-neutral-700 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards] motion-safe:[animation-delay:240ms]">
                   Estancia privada en una zona estratégica de Guadalajara, con
                   atención directa y sin intermediarios para el Mundial 2026.
                 </p>
@@ -81,7 +139,7 @@ export default function LandingPage({ content }) {
                   <img
                     src="/images/apartment/hero-principal.jpg"
                     alt="Vista principal del departamento"
-                    className="h-full w-full object-cover"
+                    className="parallax h-full w-full object-cover"
                     loading="lazy"
                   />
                 </div>
@@ -93,7 +151,7 @@ export default function LandingPage({ content }) {
 
             <div className="order-3 space-y-4 lg:col-span-7 lg:order-3">
               <a
-                className="inline-flex items-center justify-center rounded-full bg-rose-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition-transform duration-300 ease-out hover:-translate-y-0.5 hover:bg-rose-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2"
+                className="inline-flex items-center justify-center rounded-full bg-rose-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition-transform duration-300 ease-out hover:-translate-y-0.5 hover:bg-rose-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards] motion-safe:[animation-delay:360ms]"
                 href="https://wa.me/526691590498text=Hola%2C%20me%20interesa%20el%20departamento%20para%20el%20Mundial%202026%20en%20Guadalajara.%20%C2%BFQu%C3%A9%20fechas%20tienes%20disponibles%20y%20cu%C3%A1l%20es%20el%20proceso%20de%20reserva%3F"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -159,7 +217,7 @@ export default function LandingPage({ content }) {
 
         <section
           aria-labelledby="summary-title"
-          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+          className="reveal space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <h2
             id="summary-title"
@@ -178,7 +236,7 @@ export default function LandingPage({ content }) {
             ].map((item, index) => (
               <div
                 key={`${item.label}-${index}`}
-                className="group rounded-2xl border border-neutral-200 bg-white p-4 text-center shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:shadow-md motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]"
+                className="reveal group rounded-2xl border border-neutral-200 bg-white p-4 text-center shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:shadow-md motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]"
               >
                 {[
                   {
@@ -208,35 +266,35 @@ export default function LandingPage({ content }) {
                 ][index] && (
                   <div className="flex justify-center">
                     <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gray-50 ring-1 ring-gray-200 transition-transform duration-200 ease-out group-hover:scale-105">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className={`h-6 w-6 ${[
-                        "text-emerald-500",
-                        "text-rose-500",
-                        "text-sky-500",
-                        "text-sky-500",
-                        "text-amber-500",
-                        "text-sky-500",
-                      ][index]}`}
-                    >
-                      <path
-                        d={
-                          [
-                            "M4 12a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v5H4zM8 8a2 2 0 1 0-4 0M16 8a2 2 0 1 0 4 0",
-                            "M4 12h16M6 12V9a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3M4 12v4M20 12v4",
-                            "M4 12h16M6 12V7a2 2 0 1 1 4 0v5M8 16v2M12 16v2",
-                            "M4.5 9.5a8 8 0 0 1 11 0M7 12a4.5 4.5 0 0 1 6 0M10 15h.01",
-                            "M3 13h12l2-3h2a1 1 0 0 1 1 1v5H3v-3a1 1 0 0 1 1-1zm2 3a1.5 1.5 0 1 0 3 0m8 0a1.5 1.5 0 1 0 3 0",
-                            "M12 4v16M8 8l4-4 4 4M8 16l4 4 4-4",
-                          ][index]
-                        }
-                      />
-                    </svg>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className={`h-6 w-6 ${[
+                          "text-emerald-500",
+                          "text-rose-500",
+                          "text-sky-500",
+                          "text-sky-500",
+                          "text-amber-500",
+                          "text-sky-500",
+                        ][index]}`}
+                      >
+                        <path
+                          d={
+                            [
+                              "M4 12a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v5H4zM8 8a2 2 0 1 0-4 0M16 8a2 2 0 1 0 4 0",
+                              "M4 12h16M6 12V9a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3M4 12v4M20 12v4",
+                              "M4 12h16M6 12V7a2 2 0 1 1 4 0v5M8 16v2M12 16v2",
+                              "M4.5 9.5a8 8 0 0 1 11 0M7 12a4.5 4.5 0 0 1 6 0M10 15h.01",
+                              "M3 13h12l2-3h2a1 1 0 0 1 1 1v5H3v-3a1 1 0 0 1 1-1zm2 3a1.5 1.5 0 1 0 3 0m8 0a1.5 1.5 0 1 0 3 0",
+                              "M12 4v16M8 8l4-4 4 4M8 16l4 4 4-4",
+                            ][index]
+                          }
+                        />
+                      </svg>
                     </span>
                   </div>
                 )}
@@ -249,11 +307,11 @@ export default function LandingPage({ content }) {
           </div>
         </section>
 
-        <GallerySection />
+        <GallerySection className="reveal" />
 
         <section
           aria-labelledby="property-title"
-          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+          className="reveal space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <h2
             id="property-title"
@@ -307,10 +365,9 @@ export default function LandingPage({ content }) {
                   "Clósets y áreas de almacenamiento suficientes para estancias prolongadas.",
               },
             ].map((item, index) => (
-
               <div
                 key={`${item.description}-${index}`}
-                className="group rounded-2xl border border-neutral-200 bg-white p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]"
+                className="reveal group rounded-2xl border border-neutral-200 bg-white p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]"
               >
                 <span
                   className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-50 ring-1 ring-gray-200 transition-transform duration-300 ease-out group-hover:scale-105"
@@ -342,7 +399,7 @@ export default function LandingPage({ content }) {
         <section
           aria-labelledby="stadium-location-title"
           role="region"
-          className="space-y-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+          className="reveal space-y-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
             <div className="space-y-4">
@@ -408,7 +465,7 @@ export default function LandingPage({ content }) {
 
         <section
           aria-labelledby="direct-trust-title"
-          className="space-y-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+          className="reveal space-y-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <h2
             id="direct-trust-title"
@@ -427,7 +484,7 @@ export default function LandingPage({ content }) {
             ].map((item) => (
               <div
                 key={item.text}
-                className="flex items-start gap-3 rounded-2xl bg-neutral-50 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
+                className="reveal flex items-start gap-3 rounded-2xl bg-neutral-50 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
               >
                 <span
                   className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-neutral-100 text-neutral-700"
@@ -454,7 +511,7 @@ export default function LandingPage({ content }) {
 
         <section
           aria-labelledby="nearby-title"
-          className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
+          className="reveal space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] sm:p-8"
         >
           <h2
             id="nearby-title"
@@ -466,37 +523,37 @@ export default function LandingPage({ content }) {
             Opciones prácticas y agradables a pocos minutos del departamento durante tu estancia en Guadalajara.
           </p>
           <ul className="grid gap-4 text-neutral-700 sm:grid-cols-2">
-            <li className="rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
+            <li className="reveal rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
               <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-100 text-neutral-700">
                 <span className="text-xs">•</span>
               </span>
               <p>Restaurantes y mercados locales para comer antes o después de los partidos</p>
             </li>
-            <li className="rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
+            <li className="reveal rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
               <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-100 text-neutral-700">
                 <span className="text-xs">•</span>
               </span>
               <p>Cafés tranquilos para trabajar, planear el día o descansar</p>
             </li>
-            <li className="rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
+            <li className="reveal rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
               <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-100 text-neutral-700">
                 <span className="text-xs">•</span>
               </span>
               <p>Áreas verdes y parques cercanos para caminar y despejarte</p>
             </li>
-            <li className="rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
+            <li className="reveal rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
               <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-100 text-neutral-700">
                 <span className="text-xs">•</span>
               </span>
               <p>Centros comerciales y servicios esenciales a corta distancia</p>
             </li>
-            <li className="rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
+            <li className="reveal rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
               <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-100 text-neutral-700">
                 <span className="text-xs">•</span>
               </span>
               <p>Opciones culturales y gastronómicas para conocer la ciudad</p>
             </li>
-            <li className="rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
+            <li className="reveal rounded-xl bg-neutral-100 p-4 shadow-[0_1px_6px_rgba(0,0,0,0.04)] transition-colors duration-300 ease-out hover:bg-neutral-200 motion-safe:opacity-0 motion-safe:translate-y-2 motion-safe:animate-[fadeInUp_0.35s_ease-out_forwards]">
               <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-100 text-neutral-700">
                 <span className="text-xs">•</span>
               </span>
@@ -518,11 +575,13 @@ export default function LandingPage({ content }) {
       </div>
 
       <footer className="mx-auto max-w-5xl px-6 py-10">
-        <p className="text-sm text-neutral-600">
-          Renta directa en Guadalajara para el Mundial 2026 con atención clara y
-          organizada. Compartimos información precisa y mantenemos comunicación
-          directa para una experiencia confiable.
-        </p>
+        <div className="rounded-2xl bg-neutral-50 px-6 py-6 text-center shadow-[0_1px_6px_rgba(0,0,0,0.04)]">
+          <p className="mx-auto max-w-3xl text-sm leading-7 text-neutral-600">
+            Renta directa en Guadalajara para el Mundial 2026 con atención clara y
+            organizada. Compartimos información precisa y mantenemos comunicación
+            directa para una experiencia confiable.
+          </p>
+        </div>
       </footer>
     </div>
   );
