@@ -3,8 +3,6 @@
 :root {
   --background: #f6f3ef;
   --foreground: #171717;
-  /* Debug toggle for ambient background visibility (0 = off, 1 = on). */
-  --bg-debug: 0;
 }
 
 @theme inline {
@@ -21,90 +19,20 @@
   }
 }
 
-html {
-  background: #ffffff;
+html,
+body {
   height: 100%;
+  background: #f2f2f2;
 }
 
 body {
-  background: transparent;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  position: relative;
-  isolation: isolate;
-  min-height: 100%;
-}
-
-#ambient-bg {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-  background: #f7f4f1;
 }
 
 #app-content {
   position: relative;
   z-index: 1;
-}
-
-.ambient-layer {
-  position: absolute;
-  inset: -20%;
-  will-change: transform;
-}
-
-.layer-1 {
-  background:
-    radial-gradient(1200px 700px at 20% 20%, rgba(0, 0, 0, 0.18), transparent 60%),
-    radial-gradient(1000px 600px at 80% 30%, rgba(0, 0, 0, 0.14), transparent 60%),
-    radial-gradient(1100px 700px at 50% 85%, rgba(0, 0, 0, 0.12), transparent 60%);
-  filter: blur(40px);
-  opacity: 0.6;
-  animation: layerFloatOne 30s ease-in-out infinite;
-}
-
-.layer-2 {
-  inset: -30%;
-  background:
-    radial-gradient(600px 600px at 30% 30%, rgba(0, 0, 0, 0.12), transparent 60%),
-    radial-gradient(500px 500px at 70% 60%, rgba(0, 0, 0, 0.1), transparent 60%);
-  filter: blur(50px);
-  opacity: 0.7;
-  animation: layerFloatTwo 28s ease-in-out infinite;
-}
-
-.layer-3 {
-  background-image:
-    radial-gradient(circle, rgba(0, 0, 0, 0.22) 0 1.2px, transparent 1.4px),
-    radial-gradient(circle, rgba(0, 0, 0, 0.16) 0 1px, transparent 1.3px),
-    radial-gradient(circle, rgba(0, 0, 0, 0.12) 0 0.8px, transparent 1.2px);
-  background-size: 180px 180px, 260px 260px, 340px 340px;
-  background-position: 0 0, 120px 200px, 240px 80px;
-  opacity: 0.25;
-  animation: particleFloat 26s linear infinite;
-}
-
-@keyframes layerFloatOne {
-  0% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(-36px, 24px, 0) scale(1.03); }
-  100% { transform: translate3d(0, 0, 0) scale(1); }
-}
-
-@keyframes layerFloatTwo {
-  0% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(-60px, 40px, 0); }
-  100% { transform: translate3d(0, 0, 0); }
-}
-
-@keyframes particleFloat {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-160px);
-  }
 }
 
 @layer utilities {
@@ -190,19 +118,6 @@ body {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  #ambient-bg {
-    animation: none;
-    transform: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .ambient-layer {
-    animation: none;
-    transform: none;
-  }
-}
 
 .reveal {
   opacity: 0;

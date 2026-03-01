@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { cookies } from "next/headers";
 import Script from "next/script";
 import "./globals.css";
+import AmbientParticles from "../components/AmbientParticles";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -58,11 +59,7 @@ export default async function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div id="ambient-bg">
-          <div className="ambient-layer layer-1"></div>
-          <div className="ambient-layer layer-2"></div>
-          <div className="ambient-layer layer-3"></div>
-        </div>
+        <AmbientParticles />
         <div id="app-content">
           <Script
             id="lodgingbusiness-jsonld"
