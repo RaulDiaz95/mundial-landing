@@ -7,8 +7,8 @@ export const metadata = {
     "Apartment rental in Guadalajara for World Cup 2026. Strategic location, comfortable stay, and direct contact with no intermediaries. Check availability.",
   alternates: {
     languages: {
-      es: "/",
-      en: "/en",
+      es: "/es",
+      en: "/",
       "x-default": "/",
     },
   },

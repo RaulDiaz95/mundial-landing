@@ -2,7 +2,12 @@ import { NextResponse } from "next/server";
 
 export function middleware(request) {
   const { pathname } = request.nextUrl;
-  const locale = pathname.startsWith("/en") ? "en" : "es";
+  if (pathname.startsWith("/en")) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/";
+    return NextResponse.redirect(url);
+  }
+  const locale = pathname.startsWith("/es") ? "es" : "en";
   const response = NextResponse.next();
 
   response.cookies.set("NEXT_LOCALE", locale, { path: "/" });
@@ -11,5 +16,5 @@ export function middleware(request) {
 }
 
 export const config = {
-  matcher: ["/", "/en/:path*"],
+  matcher: ["/", "/en/:path*", "/es/:path*"],
 };
