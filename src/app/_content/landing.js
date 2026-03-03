@@ -2,21 +2,27 @@
   es: {
     siteName: "Mundial 2026 Guadalajara · Renta Directa",
     hero: {
-      title: "Departamento en renta en Guadalajara para el Mundial 2026",
+      title:
+        "Departamento en renta en Guadalajara para equipos de medios del Mundial 2026",
       subtitle:
-        "Estancia privada y bien ubicada para vivir el torneo con tranquilidad. Este departamento está pensado para viajeros que buscan privacidad, acceso eficiente y un punto de partida confiable en Guadalajara. Aquí encontrarás comunicación directa y condiciones claras, con una experiencia enfocada en el Mundial 2026 sin complicaciones. El objetivo es que puedas concentrarte en el fútbol y en tu grupo con un espacio seguro, limpio y funcional.",
-      cta: "Consultar disponibilidad",
+        "Departamento privado y bien ubicado para estancias profesionales durante el torneo. Ideal para equipos de transmisión, prensa y producción que requieren un espacio tranquilo, cómodo y eficiente en Guadalajara. La ubicación en Chapalita facilita traslados a estadio, Expo Guadalajara y avenidas principales, con comunicación directa y condiciones claras.",
+      cta: "Consultar disponibilidad junio 2026",
       lead:
-        "Estancia privada en una zona estratégica de Guadalajara, con atención directa y sin intermediarios para el Mundial 2026.",
+        "Alojamiento profesional en Guadalajara para equipos de medios y broadcast durante el Mundial 2026.",
       sublead:
-        "Pensado para viajeros que buscan comodidad, privacidad y traslados eficientes durante el torneo.",
-      detailsLabel: "Leer descripción completa",
-      badges: ["Guadalajara", "Renta directa", "Mundial 2026"],
-      ctaNote: "Respuesta rápida y contacto directo por WhatsApp",
+        "Disponible por el mes completo de junio 2026, con base tranquila en zona estratégica y logística ágil.",
+      detailsLabel: "Ver descripción completa",
+      badges: [
+        "Chapalita · Guadalajara",
+        "Ideal para equipos de medios",
+        "Estancia mensual junio 2026",
+        "Acceso rápido a Expo y estadio",
+      ],
+      ctaNote: "Contacto directo por WhatsApp para disponibilidad y detalles",
       bullets: [
-        "Zona estratégica con fácil acceso a estadio y Expo",
-        "Comunicación directa y respuesta rápida por WhatsApp",
-        "Espacio privado, cómodo y cuidadosamente mantenido",
+        "Ubicación estratégica con acceso ágil a estadio, Expo y avenidas clave",
+        "Espacio privado, silencioso y cómodo para equipos en operación",
+        "Condiciones claras y coordinación directa para estancias largas",
       ],
     },
     summary: {
@@ -159,21 +165,27 @@
   en: {
     siteName: "World Cup 2026 Guadalajara · Direct Booking",
     hero: {
-      title: "Guadalajara apartment rental for the World Cup 2026",
+      title:
+        "Guadalajara apartment rental for World Cup 2026 media teams",
       subtitle:
-        "A private, well‑located stay designed for guests who want a calm base and reliable logistics during the tournament. This apartment is built for comfort, privacy, and easy access to key venues in Guadalajara. Expect direct communication, clear conditions, and a premium, no‑friction experience so you can focus on the matches and your group with confidence.",
-      cta: "Check availability",
+        "A private, well‑located apartment built for professional stays during the tournament. Ideal for broadcast crews, journalists, and production teams who need a calm base, reliable logistics, and direct coordination in Guadalajara. The Chapalita location provides efficient access to the stadium, Expo Guadalajara, and major avenues, with clear terms and fast communication.",
+      cta: "Check June 2026 availability",
       lead:
-        "A private stay in a strategic area of Guadalajara, with direct contact and no intermediaries for World Cup 2026.",
+        "Professional accommodation in Guadalajara for World Cup 2026 media and broadcast teams.",
       sublead:
-        "Designed for travelers who value comfort, privacy, and efficient transfers during the tournament.",
+        "Available for the full month of June 2026, with a quiet base and efficient transfers.",
       detailsLabel: "Read full description",
-      badges: ["Guadalajara", "Direct rental", "World Cup 2026"],
-      ctaNote: "Fast reply and direct WhatsApp contact",
+      badges: [
+        "Chapalita · Guadalajara",
+        "Ideal for media crews",
+        "Full‑month June 2026 stay",
+        "Quick access to Expo & stadium",
+      ],
+      ctaNote: "Direct WhatsApp contact for availability and details",
       bullets: [
-        "Strategic location with easy access to the stadium and Expo",
-        "Direct communication and quick WhatsApp responses",
-        "Private, comfortable, and carefully maintained space",
+        "Strategic access to stadium, Expo Guadalajara, and main avenues",
+        "Quiet, private space suited for teams on long assignments",
+        "Clear terms and direct coordination for monthly stays",
       ],
     },
     summary: {
