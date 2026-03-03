@@ -104,6 +104,10 @@
           url: "https://www.google.com/maps/dir/?api=1&origin=Classiqa%20Chapalita%20Guadalajara&destination=Parque%20Metropolitano%20Guadalajara",
         },
         {
+          title: "La Minerva",
+          url: "https://maps.app.goo.gl/Sgx5hkiEvV1rJp7A7",
+        },
+        {
           title: "Centro Historico",
           url: "https://www.google.com/maps/dir/?api=1&origin=Classiqa%20Chapalita%20Guadalajara&destination=Centro%20Historico%20Guadalajara",
         },
@@ -282,6 +286,10 @@
           url: "https://www.google.com/maps/dir/?api=1&origin=Classiqa%20Chapalita%20Guadalajara&destination=Parque%20Metropolitano%20Guadalajara",
         },
         {
+          title: "La Minerva",
+          url: "https://maps.app.goo.gl/Sgx5hkiEvV1rJp7A7",
+        },
+        {
           title: "Historic Center",
           url: "https://www.google.com/maps/dir/?api=1&origin=Classiqa%20Chapalita%20Guadalajara&destination=Centro%20Historico%20Guadalajara",
         },
@@ -358,4 +366,3 @@
       "Direct rental in Guadalajara for World Cup 2026. Clear information, responsive communication, and limited availability during key dates. Reach out for rates, dates, and practical details.",
   },
 };
-
