@@ -90,11 +90,27 @@
         "El departamento se encuentra en Chapalita, una de las zonas mejor ubicadas y más agradables de Guadalajara, ideal para quienes visitan la ciudad durante el Mundial 2026.",
       body:
         "Su ubicación permite traslados eficientes hacia los principales puntos del evento, sin sacrificar tranquilidad ni comodidad.",
-      chips: [
-        "Acceso rápido a Expo Guadalajara",
-        "Conectividad sencilla hacia el estadio y zonas sede",
-        "Zona residencial tranquila, lejos del ruido turístico",
-        "Cercanía a avenidas principales para moverte por la ciudad",
+      nearbyLocations: [
+        {
+          title: "Estadio Akron",
+          url: "https://www.google.com/maps/dir/?api=1&origin=Classiqa%20Chapalita%20Guadalajara&destination=Estadio%20Akron%20Zapopan",
+        },
+        {
+          title: "Zona de restaurantes",
+          url: "https://www.google.com/maps/dir/?api=1&origin=Classiqa%20Chapalita%20Guadalajara&destination=Chapalita%20Restaurants%20Guadalajara",
+        },
+        {
+          title: "Parque Metropolitano",
+          url: "https://www.google.com/maps/dir/?api=1&origin=Classiqa%20Chapalita%20Guadalajara&destination=Parque%20Metropolitano%20Guadalajara",
+        },
+        {
+          title: "Centro Historico",
+          url: "https://www.google.com/maps/dir/?api=1&origin=Classiqa%20Chapalita%20Guadalajara&destination=Centro%20Historico%20Guadalajara",
+        },
+        {
+          title: "Anadres plaza exclusiva",
+          url: "https://www.google.com/maps/dir/?api=1&origin=Classiqa%20Chapalita%20Guadalajara&destination=Andares%20Zapopan",
+        },
       ],
       note: "Servicios, restaurantes y comercios a pocos minutos",
       mapLabel:
@@ -252,11 +268,27 @@
         "The apartment is in Chapalita, one of Guadalajara’s most pleasant and well‑connected areas, ideal for World Cup visitors.",
       body:
         "Its location enables efficient transfers to key venues without sacrificing comfort or quiet.",
-      chips: [
-        "Quick access to Expo Guadalajara",
-        "Easy connectivity to the stadium and host zones",
-        "Calm residential area away from tourist noise",
-        "Close to main avenues for easy city travel",
+      nearbyLocations: [
+        {
+          title: "Akron Stadium (World Cup venue)",
+          url: "https://www.google.com/maps/dir/?api=1&origin=Classiqa%20Chapalita%20Guadalajara&destination=Estadio%20Akron%20Zapopan",
+        },
+        {
+          title: "Restaurant District",
+          url: "https://www.google.com/maps/dir/?api=1&origin=Classiqa%20Chapalita%20Guadalajara&destination=Chapalita%20Restaurants%20Guadalajara",
+        },
+        {
+          title: "Metropolitan Park",
+          url: "https://www.google.com/maps/dir/?api=1&origin=Classiqa%20Chapalita%20Guadalajara&destination=Parque%20Metropolitano%20Guadalajara",
+        },
+        {
+          title: "Historic Center",
+          url: "https://www.google.com/maps/dir/?api=1&origin=Classiqa%20Chapalita%20Guadalajara&destination=Centro%20Historico%20Guadalajara",
+        },
+        {
+          title: "Andares Luxury Mall",
+          url: "https://www.google.com/maps/dir/?api=1&origin=Classiqa%20Chapalita%20Guadalajara&destination=Andares%20Zapopan",
+        },
       ],
       note: "Restaurants, cafés, and essential services just minutes away",
       mapLabel:

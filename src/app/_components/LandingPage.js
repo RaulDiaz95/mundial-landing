@@ -342,13 +342,17 @@ export default function LandingPage({ content }) {
                 {content.location.body}
               </p>
               <div className="flex flex-wrap gap-2 text-sm text-neutral-700">
-                {content.location.chips.map((chip) => (
-                  <span
-                    key={chip}
+                {content.location.nearbyLocations.map((location) => (
+                  <a
+                    key={location.title}
+                    href={location.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Open location in Google Maps"
                     className="rounded-full bg-white/70 px-4 py-2 text-sm text-neutral-700 shadow-[0_1px_6px_rgba(0,0,0,0.06)]"
                   >
-                    {chip}
-                  </span>
+                    {location.title}
+                  </a>
                 ))}
               </div>
               <p className="text-sm text-neutral-600">{content.location.note}</p>
